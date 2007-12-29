@@ -1,7 +1,7 @@
-#summary Collection of wiki pages related to developing & maintaining !ExtLib
+#summary Collection of wiki pages related to developing & maintaining ExtLib
 #labels Phase-Implementation
 
 = Developer page =
 
-* ReleaseNotes
-* ReleaseProcess
+ * ReleaseNotes
+ * ReleaseProcess
