@@ -1,0 +1,11 @@
+#summary One-sentence summary of this page.
+
+= ExtLib release notes =
+
+== extlib-1.5.1 (2007-12-29 - trunk @ r363)
+ * First release from http://code.google.com/p/ocaml-extlib
+ * Bug fixes / improvements: 
+  * Add `ExtArray.Array.iter2`
+  * `Unzip` module fix & test case as reported by Robert Atkey
+  * `BitSet.enum` problem reported by Pascal Zimmer
+  * `nsplit "" _` ==> `[]`
