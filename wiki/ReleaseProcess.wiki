@@ -21,6 +21,8 @@ make run
   * Copy the newly created extlib package to GODI `godi/build/distfiles`, update the GODI package (`godi/build/godi/godi-extlib/Makefile`) to use the new version.
   * Run godi_console and try to build the new extlib version.
  # Upload the release tarball to http://code.google.com/p/ocaml-extlib/downloads
- # Re-QA the GODI package by deleting the local package from `godi/build/distfiles` and re-try building with godi_console.
+ # Re-QA the GODI package by deleting the local package from `godi/build/distfiles` and re-try building with godi_console.  This tests that the package can be successfully downloaded from code.google.com.
  # Submit the updated GODI package to GODI SVN and release the new package.
+ # Tag the released trunk revision by running:
+  * `svn cp -r 363 https://ocaml-extlib.googlecode.com/svn/trunk https://ocaml-extlib.googlecode.com/svn/tags/extlib-1.5.1`.  Mention trunk revision (in this example it would be r363) in the submit message.
  # Announce the new extlib release on OCaml & extlib mailing lists.
