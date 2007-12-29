@@ -1,8 +1,8 @@
 #summary One-sentence summary of this page.
 
-= ExtLib release notes =
+= !ExtLib release notes =
 
-== extlib-1.5.1 (2007-12-29 - trunk @ r363)
+== extlib-1.5.1 (2007-12-29 - trunk @ r363) ==
  * First release from http://code.google.com/p/ocaml-extlib
  * Bug fixes / improvements: 
   * Add `ExtArray.Array.iter2`
