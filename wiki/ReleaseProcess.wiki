@@ -1,0 +1,26 @@
+#summary Release process - how to make a new release?
+
+= Release process =
+
+ # Test that the current trunk is working by compiling and running the test suite
+{{{
+cd ocaml-extlib/trunk/test
+make 
+make run
+make opt
+make run
+}}}
+ # Inspect the results.  *All* test cases must pass in both byte code and native code.
+ # In top of the tree directory, run release candidate creation script:
+  * `sh util/create_rc.sh -r XY -v x.y.z` where 
+   * XY is the head revision id of trunk that has been tested to work
+   * x.y.z is the extlib release version (e.g., 1.5.1)
+  * The script creates a directory `tmp` that contains the release tarball, GODI `distinfo` and `extlib` and `extlib-x.y.z` directories.
+ # QA extlib once again in `tmp/extlib/test` by running the test suite again.  This tests that the exported revision is working as expected.
+ # QA the release package with GODI
+  * Copy the newly created extlib package to GODI `godi/build/distfiles`, update the GODI package (`godi/build/godi/godi-extlib/Makefile`) to use the new version.
+  * Run godi_console and try to build the new extlib version.
+ # Upload the release tarball to http://code.google.com/p/ocaml-extlib/downloads
+ # Re-QA the GODI package by deleting the local package from `godi/build/distfiles` and re-try building with godi_console.
+ # Submit the updated GODI package to GODI SVN and release the new package.
+ # Announce the new extlib release on OCaml & extlib mailing lists.
