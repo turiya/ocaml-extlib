@@ -25,4 +25,8 @@ make run
  # Submit the updated GODI package to GODI SVN and release the new package.
  # Tag the released trunk revision by running:
   * `svn cp -r 363 https://ocaml-extlib.googlecode.com/svn/trunk https://ocaml-extlib.googlecode.com/svn/tags/extlib-1.5.1`.  Mention trunk revision (in this example it would be r363) in the submit message.
+ # Update the API reference:
+  * Compile the API ref by running `make doc` in `trunk/extlib`
+  * `cp trunk/extlib/doc/* doc/apiref/`
+  * Submit change to SVN (review `svn st` for added files)
  # Announce the new extlib release on OCaml & extlib mailing lists.
