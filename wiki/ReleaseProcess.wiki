@@ -11,6 +11,7 @@ make opt
 make run
 }}}
  # Inspect the results.  *All* test cases must pass in both byte code and native code.
+  * Also run tests with the extlib version that's installed on ocamlfind.  See issue 1 for details.  If the release fixes any bugs, the previously ocamlfind extlib should fail some test cases.
  # In top of the tree directory, run release candidate creation script:
   * `sh util/create_rc.sh -r XY -v x.y.z` where 
    * XY is the head revision id of trunk that has been tested to work
@@ -20,6 +21,7 @@ make run
  # QA the release package with GODI
   * Copy the newly created extlib package to GODI `godi/build/distfiles`, update the GODI package (`godi/build/godi/godi-extlib/Makefile`) to use the new version.
   * Run godi_console and try to build the new extlib version.
+  * Run test suite against the ocamlfind installed !ExtLib library (see issue 1)
  # Upload the release tarball to http://code.google.com/p/ocaml-extlib/downloads
  # Re-QA the GODI package by deleting the local package from `godi/build/distfiles` and re-try building with godi_console.  This tests that the package can be successfully downloaded from code.google.com.
  # Submit the updated GODI package to GODI SVN and release the new package.
