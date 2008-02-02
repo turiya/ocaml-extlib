@@ -72,8 +72,8 @@
  <code class="code">e2</code> repeatedly until one of the two enumerations ends.<br>
 </div>
 <pre><span class="keyword">val</span> <a name="VALfold"></a>fold : <code class="type">('a -> 'b -> 'b) -> 'b -> 'a <a href="Enum.html#TYPEt">t</a> -> 'b</code></pre><div class="info">
-<code class="code">fold f v e</code> returns v if e is empty,
-  otherwise <code class="code">f (... (f (f v a1) a2) ...) aN</code> where a1..N are
+<code class="code">fold f v e</code> returns <code class="code">v</code> if <code class="code">e</code> is empty,
+  otherwise <code class="code">f aN (... (f a2 (f a1 v)) ...)</code> where a1..N are
   the elements of <code class="code">e</code>.<br>
 </div>
 <pre><span class="keyword">val</span> <a name="VALfold2"></a>fold2 : <code class="type">('a -> 'b -> 'c -> 'c) -> 'c -> 'a <a href="Enum.html#TYPEt">t</a> -> 'b <a href="Enum.html#TYPEt">t</a> -> 'c</code></pre><div class="info">

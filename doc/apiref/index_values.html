@@ -795,8 +795,8 @@ Flush remaining unwritten bits, adding up to 7 bits which values 0.
 <td></td></tr>
 <tr><td><a href="Enum.html#VALfold">fold</a> [<a href="Enum.html">Enum</a>]</td>
 <td><div class="info">
-<code class="code">fold f v e</code> returns v if e is empty,
-  otherwise <code class="code">f (... (f (f v a1) a2) ...) aN</code> where a1..N are
+<code class="code">fold f v e</code> returns <code class="code">v</code> if <code class="code">e</code> is empty,
+  otherwise <code class="code">f aN (... (f a2 (f a1 v)) ...)</code> where a1..N are
   the elements of <code class="code">e</code>.
 </div>
 </td></tr>
