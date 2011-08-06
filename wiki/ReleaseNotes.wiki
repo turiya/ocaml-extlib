@@ -2,6 +2,18 @@
 
 = !ExtLib release notes =
 
+== extlib-1.5.2 (2011-08-06 - trunk @ r389) ==
+ * Bug fixes / improvements:
+  * memory corruption in `DynArray.insert`
+  * `ExtList.make` is now tail-recursive
+  * stack overflow in `ExtString.nsplit`
+  * `ExtList.(@)` is now in scope after `open ExtLib`
+  * `DynArray` will not attempt to grow past `Sys.max_array_length`
+  * faster `ExtString.starts_with` and `ExtString.ends_with`
+  * some documentation comments
+ * New functions:
+  * `List.find_map`
+
 == extlib-1.5.1 (2007-12-29 - trunk @ r363) ==
  * First release from http://code.google.com/p/ocaml-extlib
  * Bug fixes / improvements: 
