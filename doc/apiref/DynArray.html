@@ -173,7 +173,7 @@ remove all elements from the array and resize it to 0.<br>
 	is equivalent to <code class="code">for i = 0 to length darr - 1 do f (get darr i) done;</code><br>
 </div>
 <pre><span class="keyword">val</span> <a name="VALiteri"></a>iteri : <code class="type">(int -> 'a -> unit) -> 'a <a href="DynArray.html#TYPEt">t</a> -> unit</code></pre><div class="info">
-<code class="code">iter f darr</code> calls the function <code class="code">f</code> on every element of <code class="code">darr</code>.  It
+<code class="code">iteri f darr</code> calls the function <code class="code">f</code> on every element of <code class="code">darr</code>.  It
 	is equivalent to <code class="code">for i = 0 to length darr - 1 do f i (get darr i) done;</code><br>
 </div>
 <pre><span class="keyword">val</span> <a name="VALmap"></a>map : <code class="type">('a -> 'b) -> 'a <a href="DynArray.html#TYPEt">t</a> -> 'b <a href="DynArray.html#TYPEt">t</a></code></pre><div class="info">

@@ -95,6 +95,12 @@ Returns the last element of the list, or raise <code class="code">Empty_list</co
 	 <code class="code">f ai = Some bi</code> (when <code class="code">f</code> returns <code class="code">None</code>, the corresponding element of
 	 <code class="code">l</code> is discarded).<br>
 </div>
+<pre><span class="keyword">val</span> <a name="VALfind_map"></a>find_map : <code class="type">('a -> 'b option) -> 'a list -> 'b</code></pre><div class="info">
+<code class="code">find_map pred list</code> finds the first element of <code class="code">list</code> for which
+	    <code class="code">pred element</code> returns <code class="code">Some r</code>.  It returns <code class="code">r</code> immediately
+	    once found or raises <code class="code">Not_found</code> if no element matches the
+	    predicate.  See also <a href="ExtList.List.html#VALfilter_map"><code class="code">ExtList.List.filter_map</code></a>.<br>
+</div>
 <pre><span class="keyword">val</span> <a name="VALsplit_nth"></a>split_nth : <code class="type">int -> 'a list -> 'a list * 'a list</code></pre><div class="info">
 <code class="code">split_nth n l</code> returns two lists <code class="code">l1</code> and <code class="code">l2</code>, <code class="code">l1</code> containing the
 	 first <code class="code">n</code> elements of <code class="code">l</code> and <code class="code">l2</code> the others. Raise <code class="code">Invalid_index</code> if

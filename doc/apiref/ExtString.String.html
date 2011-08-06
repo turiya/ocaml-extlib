@@ -60,6 +60,7 @@
 <code class="code">nsplit s sep</code> splits the string <code class="code">s</code> into a list of strings
 		which are separated by <code class="code">sep</code>.
                 <code class="code">nsplit "" _</code> returns the empty list.<br>
+<b>Raises</b> <code>Invalid_string</code> if <code class="code">sep</code> is empty string.<br>
 </div>
 <pre><span class="keyword">val</span> <a name="VALjoin"></a>join : <code class="type">string -> string list -> string</code></pre><div class="info">
 Same as <code class="code">concat</code><br>
