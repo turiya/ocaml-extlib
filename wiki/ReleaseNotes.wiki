@@ -1,4 +1,5 @@
 #summary ExtLib release notes
+#labels Featured
 
 = !ExtLib release notes =
 
