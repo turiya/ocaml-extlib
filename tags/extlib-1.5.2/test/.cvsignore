@@ -1,0 +1,10 @@
+*.swp
+._d
+*.cmi
+*.cmo
+*.cma
+*.cmx
+extlib_test
+extlib_test.exe
+mktest
+build-tmp
