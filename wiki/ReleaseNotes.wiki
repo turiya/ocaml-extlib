@@ -3,6 +3,15 @@
 
 = !ExtLib release notes =
 
+== extlib-1.5.3 (2012-08-12 - trunk @ r397) ==
+ * Bug fixes / improvements:
+  * OCaml 4.00 compatibility (Hashtbl)
+  * Std.dump: handle float array, never throw
+ * New functions:
+  * `Array.map2`
+ * Install *.cmx
+ * Build extLib.cmxs
+
 == extlib-1.5.2 (2011-08-06 - trunk @ r389) ==
  * Bug fixes / improvements:
   * memory corruption in `DynArray.insert`
