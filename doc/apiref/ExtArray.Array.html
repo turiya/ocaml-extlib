@@ -39,59 +39,64 @@
 <center><h1>Module <a href="type_ExtArray.Array.html">ExtArray.Array</a></h1></center>
 <br>
 <pre><span class="keyword">module</span> Array: <code class="code">sig</code> <a href="ExtArray.Array.html">..</a> <code class="code">end</code></pre><hr width="100%">
-<pre><span class="keyword">val</span> <a name="VALrev"></a>rev : <code class="type">'a array -> 'a array</code></pre><div class="info">
-<a name="6_Newfunctions"></a>
-<h6>New functions</h6>
+<pre><span id="VALrev"><span class="keyword">val</span> rev</span> : <code class="type">'a array -> 'a array</code></pre><div class="info">
+<span id="6_Newfunctions"><h6>New functions</h6></span>
 <p>
 Array reversal.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALrev_in_place"></a>rev_in_place : <code class="type">'a array -> unit</code></pre><div class="info">
+<pre><span id="VALrev_in_place"><span class="keyword">val</span> rev_in_place</span> : <code class="type">'a array -> unit</code></pre><div class="info">
 In-place array reversal.  The array argument is updated.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALiter2"></a>iter2 : <code class="type">('a -> 'b -> unit) -> 'a array -> 'b array -> unit</code></pre><div class="info">
+<pre><span id="VALiter2"><span class="keyword">val</span> iter2</span> : <code class="type">('a -> 'b -> unit) -> 'a array -> 'b array -> unit</code></pre><div class="info">
 <code class="code">Array.iter2 f [|a1; ...; an|] [|b1; ...; bn|]</code> performs
     calls <code class="code">f a1 b1; ...; f an bn</code> in that order.<br>
 <b>Raises</b> <code>Invalid_argument</code> if the length of <code class="code">a1</code> does not equal the
     length of <code class="code">a2</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfor_all"></a>for_all : <code class="type">('a -> bool) -> 'a array -> bool</code></pre><div class="info">
+<pre><span id="VALmap2"><span class="keyword">val</span> map2</span> : <code class="type">('a -> 'b -> 'c) -> 'a array -> 'b array -> 'c array</code></pre><div class="info">
+<code class="code">Array.map2 f [|a1; ...; an|] [|b1; ...; bn|]</code> creates new array
+    <code class="code">[|f a1 b1; ...; f an bn|]</code>.<br>
+<b>Raises</b> <code>Invalid_argument</code> if the length of <code class="code">a1</code> does not equal the
+    length of <code class="code">a2</code>.<br>
+</div>
+<pre><span id="VALfor_all"><span class="keyword">val</span> for_all</span> : <code class="type">('a -> bool) -> 'a array -> bool</code></pre><div class="info">
 <code class="code">for_all p [a1; ...; an]</code> checks if all elements of the array
 	satisfy the predicate <code class="code">p</code>.  That is, it returns
 	<code class="code"> (p a1) &amp;&amp; (p a2) &amp;&amp; ... &amp;&amp; (p an)</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALexists"></a>exists : <code class="type">('a -> bool) -> 'a array -> bool</code></pre><div class="info">
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">('a -> bool) -> 'a array -> bool</code></pre><div class="info">
 <code class="code">exists p [a1; ...; an]</code> checks if at least one element of
 	the array satisfies the predicate <code class="code">p</code>.  That is, it returns
 	<code class="code"> (p a1) || (p a2) || ... || (p an)</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmem"></a>mem : <code class="type">'a -> 'a array -> bool</code></pre><div class="info">
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">'a -> 'a array -> bool</code></pre><div class="info">
 <code class="code">mem m a</code> is true if and only if <code class="code">m</code> is equal to an element of <code class="code">a</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmemq"></a>memq : <code class="type">'a -> 'a array -> bool</code></pre><div class="info">
+<pre><span id="VALmemq"><span class="keyword">val</span> memq</span> : <code class="type">'a -> 'a array -> bool</code></pre><div class="info">
 Same as <a href="ExtArray.Array.html#VALmem"><code class="code">ExtArray.Array.mem</code></a> but uses physical equality instead of
 	structural equality to compare array elements.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfind"></a>find : <code class="type">('a -> bool) -> 'a array -> 'a</code></pre><div class="info">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('a -> bool) -> 'a array -> 'a</code></pre><div class="info">
 <code class="code">find p a</code> returns the first element of array <code class="code">a</code>
 	that satisfies the predicate <code class="code">p</code>.
 	Raise <code class="code">Not_found</code> if there is no value that satisfies <code class="code">p</code> in the
 	array <code class="code">a</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfindi"></a>findi : <code class="type">('a -> bool) -> 'a array -> int</code></pre><div class="info">
+<pre><span id="VALfindi"><span class="keyword">val</span> findi</span> : <code class="type">('a -> bool) -> 'a array -> int</code></pre><div class="info">
 <code class="code">findi p a</code> returns the index of the first element of array <code class="code">a</code>
 	that satisfies the predicate <code class="code">p</code>.
 	Raise <code class="code">Not_found</code> if there is no value that satisfies <code class="code">p</code> in the
 	array <code class="code">a</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfilter"></a>filter : <code class="type">('a -> bool) -> 'a array -> 'a array</code></pre><div class="info">
+<pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">('a -> bool) -> 'a array -> 'a array</code></pre><div class="info">
 <code class="code">filter p a</code> returns all the elements of the array <code class="code">a</code>
 	that satisfy the predicate <code class="code">p</code>.  The order of the elements
 	in the input array is preserved.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfind_all"></a>find_all : <code class="type">('a -> bool) -> 'a array -> 'a array</code></pre><div class="info">
+<pre><span id="VALfind_all"><span class="keyword">val</span> find_all</span> : <code class="type">('a -> bool) -> 'a array -> 'a array</code></pre><div class="info">
 <code class="code">find_all</code> is another name for <a href="ExtArray.Array.html#VALfilter"><code class="code">ExtArray.Array.filter</code></a>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALpartition"></a>partition : <code class="type">('a -> bool) -> 'a array -> 'a array * 'a array</code></pre><div class="info">
+<pre><span id="VALpartition"><span class="keyword">val</span> partition</span> : <code class="type">('a -> bool) -> 'a array -> 'a array * 'a array</code></pre><div class="info">
 <code class="code">partition p a</code> returns a pair of arrays <code class="code">(a1, a2)</code>, where
 	<code class="code">a1</code> is the array of all the elements of <code class="code">a</code> that
 	satisfy the predicate <code class="code">p</code>, and <code class="code">a2</code> is the array of all the
@@ -99,19 +104,17 @@ Same as <a href="ExtArray.Array.html#VALmem"><code class="code">ExtArray.Array.m
 	The order of the elements in the input array is preserved.<br>
 </div>
 <br>
-<a name="6_Enumerations"></a>
-<h6>Enumerations</h6><br>
-<pre><span class="keyword">val</span> <a name="VALenum"></a>enum : <code class="type">'a array -> 'a <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
+<span id="6_Enumerations"><h6>Enumerations</h6></span><br>
+<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">'a array -> 'a <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 Returns an enumeration of the elements of an array.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALof_enum"></a>of_enum : <code class="type">'a <a href="Enum.html#TYPEt">Enum.t</a> -> 'a array</code></pre><div class="info">
+<pre><span id="VALof_enum"><span class="keyword">val</span> of_enum</span> : <code class="type">'a <a href="Enum.html#TYPEt">Enum.t</a> -> 'a array</code></pre><div class="info">
 Build an array from an enumeration.<br>
 </div>
 <br>
-<a name="6_Oldfunctions"></a>
-<h6>Old functions</h6><br>
+<span id="6_Oldfunctions"><h6>Old functions</h6></span><br>
 <br>
 These functions are already part of the Ocaml standard library
       and have not been modified. Please refer to the Ocaml Manual for
       documentation.<br>
-<pre><span class="keyword">val</span> <a name="VALlength"></a>length : <code class="type">'a array -> int</code></pre><pre><span class="keyword">val</span> <a name="VALget"></a>get : <code class="type">'a array -> int -> 'a</code></pre><pre><span class="keyword">val</span> <a name="VALset"></a>set : <code class="type">'a array -> int -> 'a -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALmake"></a>make : <code class="type">int -> 'a -> 'a array</code></pre><pre><span class="keyword">val</span> <a name="VALcreate"></a>create : <code class="type">int -> 'a -> 'a array</code></pre><pre><span class="keyword">val</span> <a name="VALinit"></a>init : <code class="type">int -> (int -> 'a) -> 'a array</code></pre><pre><span class="keyword">val</span> <a name="VALmake_matrix"></a>make_matrix : <code class="type">int -> int -> 'a -> 'a array array</code></pre><pre><span class="keyword">val</span> <a name="VALcreate_matrix"></a>create_matrix : <code class="type">int -> int -> 'a -> 'a array array</code></pre><pre><span class="keyword">val</span> <a name="VALappend"></a>append : <code class="type">'a array -> 'a array -> 'a array</code></pre><pre><span class="keyword">val</span> <a name="VALconcat"></a>concat : <code class="type">'a array list -> 'a array</code></pre><pre><span class="keyword">val</span> <a name="VALsub"></a>sub : <code class="type">'a array -> int -> int -> 'a array</code></pre><pre><span class="keyword">val</span> <a name="VALcopy"></a>copy : <code class="type">'a array -> 'a array</code></pre><pre><span class="keyword">val</span> <a name="VALfill"></a>fill : <code class="type">'a array -> int -> int -> 'a -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALblit"></a>blit : <code class="type">'a array -> int -> 'a array -> int -> int -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALto_list"></a>to_list : <code class="type">'a array -> 'a list</code></pre><pre><span class="keyword">val</span> <a name="VALof_list"></a>of_list : <code class="type">'a list -> 'a array</code></pre><pre><span class="keyword">val</span> <a name="VALiter"></a>iter : <code class="type">('a -> unit) -> 'a array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALmap"></a>map : <code class="type">('a -> 'b) -> 'a array -> 'b array</code></pre><pre><span class="keyword">val</span> <a name="VALiteri"></a>iteri : <code class="type">(int -> 'a -> unit) -> 'a array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALmapi"></a>mapi : <code class="type">(int -> 'a -> 'b) -> 'a array -> 'b array</code></pre><pre><span class="keyword">val</span> <a name="VALfold_left"></a>fold_left : <code class="type">('a -> 'b -> 'a) -> 'a -> 'b array -> 'a</code></pre><pre><span class="keyword">val</span> <a name="VALfold_right"></a>fold_right : <code class="type">('a -> 'b -> 'b) -> 'a array -> 'b -> 'b</code></pre><pre><span class="keyword">val</span> <a name="VALsort"></a>sort : <code class="type">('a -> 'a -> int) -> 'a array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALstable_sort"></a>stable_sort : <code class="type">('a -> 'a -> int) -> 'a array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALfast_sort"></a>fast_sort : <code class="type">('a -> 'a -> int) -> 'a array -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALunsafe_get"></a>unsafe_get : <code class="type">'a array -> int -> 'a</code></pre><pre><span class="keyword">val</span> <a name="VALunsafe_set"></a>unsafe_set : <code class="type">'a array -> int -> 'a -> unit</code></pre></body></html>
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a array -> int</code></pre><pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a array -> int -> 'a</code></pre><pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a array -> int -> 'a -> unit</code></pre><pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">int -> 'a -> 'a array</code></pre><pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -> 'a -> 'a array</code></pre><pre><span id="VALinit"><span class="keyword">val</span> init</span> : <code class="type">int -> (int -> 'a) -> 'a array</code></pre><pre><span id="VALmake_matrix"><span class="keyword">val</span> make_matrix</span> : <code class="type">int -> int -> 'a -> 'a array array</code></pre><pre><span id="VALcreate_matrix"><span class="keyword">val</span> create_matrix</span> : <code class="type">int -> int -> 'a -> 'a array array</code></pre><pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">'a array -> 'a array -> 'a array</code></pre><pre><span id="VALconcat"><span class="keyword">val</span> concat</span> : <code class="type">'a array list -> 'a array</code></pre><pre><span id="VALsub"><span class="keyword">val</span> sub</span> : <code class="type">'a array -> int -> int -> 'a array</code></pre><pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">'a array -> 'a array</code></pre><pre><span id="VALfill"><span class="keyword">val</span> fill</span> : <code class="type">'a array -> int -> int -> 'a -> unit</code></pre><pre><span id="VALblit"><span class="keyword">val</span> blit</span> : <code class="type">'a array -> int -> 'a array -> int -> int -> unit</code></pre><pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a array -> 'a list</code></pre><pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type">'a list -> 'a array</code></pre><pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> unit) -> 'a array -> unit</code></pre><pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> 'a array -> 'b array</code></pre><pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">(int -> 'a -> unit) -> 'a array -> unit</code></pre><pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">(int -> 'a -> 'b) -> 'a array -> 'b array</code></pre><pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">('a -> 'b -> 'a) -> 'a -> 'b array -> 'a</code></pre><pre><span id="VALfold_right"><span class="keyword">val</span> fold_right</span> : <code class="type">('a -> 'b -> 'b) -> 'a array -> 'b -> 'b</code></pre><pre><span id="VALsort"><span class="keyword">val</span> sort</span> : <code class="type">('a -> 'a -> int) -> 'a array -> unit</code></pre><pre><span id="VALstable_sort"><span class="keyword">val</span> stable_sort</span> : <code class="type">('a -> 'a -> int) -> 'a array -> unit</code></pre><pre><span id="VALfast_sort"><span class="keyword">val</span> fast_sort</span> : <code class="type">('a -> 'a -> int) -> 'a array -> unit</code></pre><pre><span id="VALunsafe_get"><span class="keyword">val</span> unsafe_get</span> : <code class="type">'a array -> int -> 'a</code></pre><pre><span id="VALunsafe_set"><span class="keyword">val</span> unsafe_set</span> : <code class="type">'a array -> int -> 'a -> unit</code></pre></body></html>

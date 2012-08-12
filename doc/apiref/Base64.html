@@ -45,41 +45,41 @@
 	Default tables maps 0..63 values on characters A-Z, a-z, 0-9, '+' and '/'
 	(in that order).<br>
 <hr width="100%">
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONInvalid_char"></a>Invalid_char</pre>
+<pre><span id="EXCEPTIONInvalid_char"><span class="keyword">exception</span> Invalid_char</span></pre>
 <div class="info">
 This exception is raised when reading an invalid character
 	from a base64 input.<br>
 </div>
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONInvalid_table"></a>Invalid_table</pre>
+<pre><span id="EXCEPTIONInvalid_table"><span class="keyword">exception</span> Invalid_table</span></pre>
 <div class="info">
 This exception is raised if the encoding or decoding table
 	size is not correct.<br>
 </div>
-<pre><span class="keyword">type</span> <a name="TYPEencoding_table"></a><code class="type"></code>encoding_table = <code class="type">char array</code> </pre>
+<pre><span id="TYPEencoding_table"><span class="keyword">type</span> <code class="type"></code>encoding_table</span> = <code class="type">char array</code> </pre>
 <div class="info">
 An encoding table maps integers 0..63 to the corresponding char.<br>
 </div>
 
-<pre><span class="keyword">type</span> <a name="TYPEdecoding_table"></a><code class="type"></code>decoding_table = <code class="type">int array</code> </pre>
+<pre><span id="TYPEdecoding_table"><span class="keyword">type</span> <code class="type"></code>decoding_table</span> = <code class="type">int array</code> </pre>
 <div class="info">
 A decoding table mais chars 0..255 to the corresponding 0..63 value
  or -1 if the char is not accepted.<br>
 </div>
 
-<pre><span class="keyword">val</span> <a name="VALstr_encode"></a>str_encode : <code class="type">?tbl:<a href="Base64.html#TYPEencoding_table">encoding_table</a> -> string -> string</code></pre><div class="info">
+<pre><span id="VALstr_encode"><span class="keyword">val</span> str_encode</span> : <code class="type">?tbl:<a href="Base64.html#TYPEencoding_table">encoding_table</a> -> string -> string</code></pre><div class="info">
 Encode a string into Base64.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALstr_decode"></a>str_decode : <code class="type">?tbl:<a href="Base64.html#TYPEdecoding_table">decoding_table</a> -> string -> string</code></pre><div class="info">
+<pre><span id="VALstr_decode"><span class="keyword">val</span> str_decode</span> : <code class="type">?tbl:<a href="Base64.html#TYPEdecoding_table">decoding_table</a> -> string -> string</code></pre><div class="info">
 Decode a string encoded into Base64, raise <code class="code">Invalid_char</code> if a
 	character in the input string is not a valid one.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALencode"></a>encode : <code class="type">?tbl:<a href="Base64.html#TYPEencoding_table">encoding_table</a> -> 'a <a href="IO.html#TYPEoutput">IO.output</a> -> 'a <a href="IO.html#TYPEoutput">IO.output</a></code></pre><div class="info">
+<pre><span id="VALencode"><span class="keyword">val</span> encode</span> : <code class="type">?tbl:<a href="Base64.html#TYPEencoding_table">encoding_table</a> -> 'a <a href="IO.html#TYPEoutput">IO.output</a> -> 'a <a href="IO.html#TYPEoutput">IO.output</a></code></pre><div class="info">
 Generic base64 encoding over an output.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdecode"></a>decode : <code class="type">?tbl:<a href="Base64.html#TYPEdecoding_table">decoding_table</a> -> <a href="IO.html#TYPEinput">IO.input</a> -> <a href="IO.html#TYPEinput">IO.input</a></code></pre><div class="info">
+<pre><span id="VALdecode"><span class="keyword">val</span> decode</span> : <code class="type">?tbl:<a href="Base64.html#TYPEdecoding_table">decoding_table</a> -> <a href="IO.html#TYPEinput">IO.input</a> -> <a href="IO.html#TYPEinput">IO.input</a></code></pre><div class="info">
 Generic base64 decoding over an input.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmake_decoding_table"></a>make_decoding_table : <code class="type"><a href="Base64.html#TYPEencoding_table">encoding_table</a> -> <a href="Base64.html#TYPEdecoding_table">decoding_table</a></code></pre><div class="info">
+<pre><span id="VALmake_decoding_table"><span class="keyword">val</span> make_decoding_table</span> : <code class="type"><a href="Base64.html#TYPEencoding_table">encoding_table</a> -> <a href="Base64.html#TYPEdecoding_table">decoding_table</a></code></pre><div class="info">
 Create a valid decoding table from an encoding one.<br>
 </div>
 </body></html>

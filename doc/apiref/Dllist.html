@@ -49,55 +49,54 @@
     This module implements a doubly linked list in a mutable or imperitive
     style (changes to the list are visible to all copies of the list).<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEnode_t"></a><code class="type">'a</code> node_t </pre>
+<pre><span id="TYPEnode_t"><span class="keyword">type</span> <code class="type">'a</code> node_t</span> </pre>
 
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONEmpty"></a>Empty</pre>
+<pre><span id="EXCEPTIONEmpty"><span class="keyword">exception</span> Empty</span></pre>
 <br>
-<a name="6_nodefunctions"></a>
-<h6>node functions </h6><br>
-<pre><span class="keyword">val</span> <a name="VALcreate"></a>create : <code class="type">'a -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<span id="6_nodefunctions"><h6>node functions </h6></span><br>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">'a -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Creates a node.  This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcopy"></a>copy : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Copy the list attached to the given node and return the copy of the given
     node.  This is an O(N) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALlength"></a>length : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> int</code></pre><div class="info">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> int</code></pre><div class="info">
 Returns the length of the list.  This is an O(N) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALrev"></a>rev : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALrev"><span class="keyword">val</span> rev</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
 List reversal.  This is an O(N) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALadd"></a>add : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a -> unit</code></pre><div class="info">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a -> unit</code></pre><div class="info">
 <code class="code">add n a</code> Creates a new node containing data <code class="code">a</code> and inserts it into
     the list after node <code class="code">n</code>.  This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALappend"></a>append : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALappend"><span class="keyword">val</span> append</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 <code class="code">append n a</code> Creates a new node containing data <code class="code">a</code> and inserts it into
     the list after node <code class="code">n</code>. Returns new node.  This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALprepend"></a>prepend : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALprepend"><span class="keyword">val</span> prepend</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 <code class="code">prepend n a</code> Creates a new node containing data <code class="code">a</code> and inserts it into
     the list before node <code class="code">n</code>. Returns new node.  This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALpromote"></a>promote : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALpromote"><span class="keyword">val</span> promote</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
 <code class="code">promote n</code> Swaps <code class="code">n</code> with <code class="code">next n</code>.  This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdemote"></a>demote : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALdemote"><span class="keyword">val</span> demote</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
 <code class="code">demote n</code> Swaps <code class="code">n</code> with <code class="code">prev n</code>.  This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALremove"></a>remove : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
 Remove node from the list no matter where it is.  This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdrop"></a>drop : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALdrop"><span class="keyword">val</span> drop</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Remove node from the list no matter where it is. Return next node.  This is
     an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALrev_drop"></a>rev_drop : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALrev_drop"><span class="keyword">val</span> rev_drop</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Remove node from the list no matter where it is. Return previous node.  This
     is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALsplice"></a>splice : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALsplice"><span class="keyword">val</span> splice</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
 <code class="code">splice n1 n2</code> Connects <code class="code">n1</code> and <code class="code">n2</code> so that
     <code class="code">next n1 == n2 &amp;&amp; prev n2 == n1</code>. This can be used to connect two discrete
     lists, or, if used on two nodes within the same list, it can be used to
@@ -105,15 +104,15 @@ Remove node from the list no matter where it is. Return previous node.  This
     case, those nodes become a discrete list by themselves.  This is an O(1)
     operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALget"></a>get : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a</code></pre><div class="info">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a</code></pre><div class="info">
 Given a node, get the data associated with that node.  This is an
     O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALset"></a>set : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a -> unit</code></pre><div class="info">
+<pre><span id="VALset"><span class="keyword">val</span> set</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a -> unit</code></pre><div class="info">
 Given a node, set the data associated with that node.  This is an O(1)
     operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALnext"></a>next : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Given a node, get the next element in the list after the node.  
 <p>
 
@@ -123,7 +122,7 @@ Given a node, get the next element in the list after the node.
 
     This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALprev"></a>prev : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALprev"><span class="keyword">val</span> prev</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Given a node, get the previous element in the list before the node.
 <p>
 
@@ -133,54 +132,52 @@ Given a node, get the previous element in the list before the node.
 
     This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALskip"></a>skip : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> int -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALskip"><span class="keyword">val</span> skip</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> int -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 <code class="code">skip n i</code> Return the node that is <code class="code">i</code> nodes after node <code class="code">n</code> in the list.
     If <code class="code">i</code> is negative then return the node that is <code class="code">i</code> nodes before node <code class="code">n</code>
     in the list.  This is an O(N) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALiter"></a>iter : <code class="type">('a -> unit) -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> unit) -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> unit</code></pre><div class="info">
 <code class="code">iter f n</code> Apply <code class="code">f</code> to every element in the list, starting at <code class="code">n</code>.  This
     is an O(N) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfold_left"></a>fold_left : <code class="type">('a -> 'b -> 'a) -> 'a -> 'b <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a</code></pre><div class="info">
+<pre><span id="VALfold_left"><span class="keyword">val</span> fold_left</span> : <code class="type">('a -> 'b -> 'a) -> 'a -> 'b <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a</code></pre><div class="info">
 Accumulate a value over the entire list.  
     This works like List.fold_left. This is an O(N) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfold_right"></a>fold_right : <code class="type">('a -> 'b -> 'b) -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'b -> 'b</code></pre><div class="info">
+<pre><span id="VALfold_right"><span class="keyword">val</span> fold_right</span> : <code class="type">('a -> 'b -> 'b) -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'b -> 'b</code></pre><div class="info">
 Accumulate a value over the entire list.
     This works like List.fold_right, but since the list is bidirectional,
     it doesn't suffer the performance problems of List.fold_right.
     This is an O(N) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmap"></a>map : <code class="type">('a -> 'b) -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'b <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'b <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Allocate a new list, with entirely new nodes, whose values are
     the transforms of the values of the original list.  Note that this
     does not modify the given list.  This is an O(N) operation.<br>
 </div>
 <br>
-<a name="6_listconversion"></a>
-<h6>list conversion </h6><br>
-<pre><span class="keyword">val</span> <a name="VALto_list"></a>to_list : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a list</code></pre><div class="info">
+<span id="6_listconversion"><h6>list conversion </h6></span><br>
+<pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a list</code></pre><div class="info">
 Converts a dllist to a normal list.  This is an O(N) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALof_list"></a>of_list : <code class="type">'a list -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALof_list"><span class="keyword">val</span> of_list</span> : <code class="type">'a list -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Converts from a normal list to a Dllist and returns the first node. Raises
     <code class="code">Empty</code> if given list is empty.  This is an O(N) operation.<br>
 </div>
 <br>
-<a name="6_enums"></a>
-<h6>enums </h6><br>
-<pre><span class="keyword">val</span> <a name="VALenum"></a>enum : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
+<span id="6_enums"><h6>enums </h6></span><br>
+<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 Create an enum of the list.
     Note that modifying the list while the enum exists will have undefined
     effects.  This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALrev_enum"></a>rev_enum : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
+<pre><span id="VALrev_enum"><span class="keyword">val</span> rev_enum</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 Create a reverse enum of the list.
     Note that modifying the list while the enum exists will have undefined
     effects.  This is an O(1) operation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALof_enum"></a>of_enum : <code class="type">'a <a href="Enum.html#TYPEt">Enum.t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
+<pre><span id="VALof_enum"><span class="keyword">val</span> of_enum</span> : <code class="type">'a <a href="Enum.html#TYPEt">Enum.t</a> -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Create a dllist from an enum.
     This consumes the enum, and allocates a whole new dllist. Raises
     <code class="code">Empty</code> if given enum is empty.  This is an O(N) operation.<br>
