@@ -9,7 +9,7 @@
   * Std.dump: handle float array, never throw
  * New functions:
   * `Array.map2`
- * Install *.cmx
+ * Install `*`.cmx
  * Build extLib.cmxs
 
 == extlib-1.5.2 (2011-08-06 - trunk @ r389) ==
