@@ -46,70 +46,70 @@
 	This is a polymorphic map, similar to standard library <code class="code">Map</code> module
 	but in a defunctorized style.<br>
 <hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type">('a, 'b)</code> t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b)</code> t</span> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALempty"></a>empty : <code class="type">('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
 The empty map, using <code class="code">compare</code> as key comparison function.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALis_empty"></a>is_empty : <code class="type">('a, 'b) <a href="PMap.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<pre><span id="VALis_empty"><span class="keyword">val</span> is_empty</span> : <code class="type">('a, 'b) <a href="PMap.html#TYPEt">t</a> -> bool</code></pre><div class="info">
 returns true if the map is empty.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALcreate"></a>create : <code class="type">('a -> 'a -> int) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">('a -> 'a -> int) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
 creates a new empty map, using the provided function for key comparison.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALadd"></a>add : <code class="type">'a -> 'b -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> ('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">'a -> 'b -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> ('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
 <code class="code">add x y m</code> returns a map containing the same bindings as
     <code class="code">m</code>, plus a binding of <code class="code">x</code> to <code class="code">y</code>. If <code class="code">x</code> was already bound
     in <code class="code">m</code>, its previous binding disappears.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfind"></a>find : <code class="type">'a -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> 'b</code></pre><div class="info">
+<pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">'a -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> 'b</code></pre><div class="info">
 <code class="code">find x m</code> returns the current binding of <code class="code">x</code> in <code class="code">m</code>,
     or raises <code class="code">Not_found</code> if no such binding exists.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALremove"></a>remove : <code class="type">'a -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> ('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">'a -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> ('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
 <code class="code">remove x m</code> returns a map containing the same bindings as
     <code class="code">m</code>, except for <code class="code">x</code> which is unbound in the returned map.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmem"></a>mem : <code class="type">'a -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">'a -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> bool</code></pre><div class="info">
 <code class="code">mem x m</code> returns <code class="code">true</code> if <code class="code">m</code> contains a binding for <code class="code">x</code>,
     and <code class="code">false</code> otherwise.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALexists"></a>exists : <code class="type">'a -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> bool</code></pre><div class="info">
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">'a -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> bool</code></pre><div class="info">
 same as <code class="code">mem</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALiter"></a>iter : <code class="type">('a -> 'b -> unit) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> unit</code></pre><div class="info">
+<pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> 'b -> unit) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> unit</code></pre><div class="info">
 <code class="code">iter f m</code> applies <code class="code">f</code> to all bindings in map <code class="code">m</code>.
     <code class="code">f</code> receives the key as first argument, and the associated value
     as second argument. The order in which the bindings are passed to
     <code class="code">f</code> is unspecified. Only current bindings are presented to <code class="code">f</code>:
     bindings hidden by more recent bindings are not passed to <code class="code">f</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmap"></a>map : <code class="type">('a -> 'b) -> ('c, 'a) <a href="PMap.html#TYPEt">t</a> -> ('c, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> ('c, 'a) <a href="PMap.html#TYPEt">t</a> -> ('c, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
 <code class="code">map f m</code> returns a map with same domain as <code class="code">m</code>, where the
     associated value <code class="code">a</code> of all bindings of <code class="code">m</code> has been
     replaced by the result of the application of <code class="code">f</code> to <code class="code">a</code>.
     The order in which the associated values are passed to <code class="code">f</code>
     is unspecified.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmapi"></a>mapi : <code class="type">('a -> 'b -> 'c) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> ('a, 'c) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALmapi"><span class="keyword">val</span> mapi</span> : <code class="type">('a -> 'b -> 'c) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> ('a, 'c) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
 Same as <code class="code">map</code>, but the function receives as arguments both the
     key and the associated value for each binding of the map.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfold"></a>fold : <code class="type">('a -> 'b -> 'b) -> ('c, 'a) <a href="PMap.html#TYPEt">t</a> -> 'b -> 'b</code></pre><div class="info">
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a -> 'b -> 'b) -> ('c, 'a) <a href="PMap.html#TYPEt">t</a> -> 'b -> 'b</code></pre><div class="info">
 <code class="code">fold f m a</code> computes <code class="code">(f kN dN ... (f k1 d1 a)...)</code>,
     where <code class="code">k1 ... kN</code> are the keys of all bindings in <code class="code">m</code>,
     and <code class="code">d1 ... dN</code> are the associated data.
     The order in which the bindings are presented to <code class="code">f</code> is
     unspecified.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfoldi"></a>foldi : <code class="type">('a -> 'b -> 'c -> 'c) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> 'c -> 'c</code></pre><div class="info">
+<pre><span id="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">('a -> 'b -> 'c -> 'c) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> 'c -> 'c</code></pre><div class="info">
 Same as <code class="code">fold</code>, but the function receives as arguments both the
     key and the associated value for each binding of the map.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALenum"></a>enum : <code class="type">('a, 'b) <a href="PMap.html#TYPEt">t</a> -> ('a * 'b) <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
+<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">('a, 'b) <a href="PMap.html#TYPEt">t</a> -> ('a * 'b) <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 creates an enumeration for this map.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALof_enum"></a>of_enum : <code class="type">?cmp:('a -> 'a -> int) -> ('a * 'b) <a href="Enum.html#TYPEt">Enum.t</a> -> ('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALof_enum"><span class="keyword">val</span> of_enum</span> : <code class="type">?cmp:('a -> 'a -> int) -> ('a * 'b) <a href="Enum.html#TYPEt">Enum.t</a> -> ('a, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
 creates a map from an enumeration, using the specified function
   for key comparison or <code class="code">compare</code> by default.<br>
 </div>

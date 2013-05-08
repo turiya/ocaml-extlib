@@ -49,29 +49,29 @@
 	and memory safe way). This module adds some functions for working with
 	options.<br>
 <hr width="100%">
-<pre><span class="keyword">val</span> <a name="VALmay"></a>may : <code class="type">('a -> unit) -> 'a option -> unit</code></pre><div class="info">
+<pre><span id="VALmay"><span class="keyword">val</span> may</span> : <code class="type">('a -> unit) -> 'a option -> unit</code></pre><div class="info">
 <code class="code">may f (Some x)</code> calls <code class="code">f x</code> and <code class="code">may f None</code> does nothing.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmap"></a>map : <code class="type">('a -> 'b) -> 'a option -> 'b option</code></pre><div class="info">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> 'a option -> 'b option</code></pre><div class="info">
 <code class="code">map f (Some x)</code> returns <code class="code">Some (f x)</code> and <code class="code">map None</code> returns <code class="code">None</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdefault"></a>default : <code class="type">'a -> 'a option -> 'a</code></pre><div class="info">
+<pre><span id="VALdefault"><span class="keyword">val</span> default</span> : <code class="type">'a -> 'a option -> 'a</code></pre><div class="info">
 <code class="code">default x (Some v)</code> returns <code class="code">v</code> and <code class="code">default x None</code> returns <code class="code">x</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmap_default"></a>map_default : <code class="type">('a -> 'b) -> 'b -> 'a option -> 'b</code></pre><div class="info">
+<pre><span id="VALmap_default"><span class="keyword">val</span> map_default</span> : <code class="type">('a -> 'b) -> 'b -> 'a option -> 'b</code></pre><div class="info">
 <code class="code">map_default f x (Some v)</code> returns <code class="code">f v</code> and <code class="code">map_default f x None</code>
 	returns <code class="code">x</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALis_none"></a>is_none : <code class="type">'a option -> bool</code></pre><div class="info">
+<pre><span id="VALis_none"><span class="keyword">val</span> is_none</span> : <code class="type">'a option -> bool</code></pre><div class="info">
 <code class="code">is_none None</code> returns <code class="code">true</code> otherwise it returns <code class="code">false</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALis_some"></a>is_some : <code class="type">'a option -> bool</code></pre><div class="info">
+<pre><span id="VALis_some"><span class="keyword">val</span> is_some</span> : <code class="type">'a option -> bool</code></pre><div class="info">
 <code class="code">is_some (Some x)</code> returns <code class="code">true</code> otherwise it returns <code class="code">false</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALget"></a>get : <code class="type">'a option -> 'a</code></pre><div class="info">
+<pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a option -> 'a</code></pre><div class="info">
 <code class="code">get (Some x)</code> returns <code class="code">x</code> and <code class="code">get None</code> raises <code class="code">No_value</code>.<br>
 </div>
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONNo_value"></a>No_value</pre>
+<pre><span id="EXCEPTIONNo_value"><span class="keyword">exception</span> No_value</span></pre>
 <div class="info">
 Raised when calling <code class="code">get None</code>.<br>
 </div>

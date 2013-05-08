@@ -1435,6 +1435,12 @@ Allocate a new list, with entirely new nodes, whose values are
 </td></tr>
 <tr><td><a href="ExtList.List.html#VALmap2">map2</a> [<a href="ExtList.List.html">ExtList.List</a>]</td>
 <td></td></tr>
+<tr><td><a href="ExtArray.Array.html#VALmap2">map2</a> [<a href="ExtArray.Array.html">ExtArray.Array</a>]</td>
+<td><div class="info">
+<code class="code">Array.map2 f [|a1; ...; an|] [|b1; ...; bn|]</code> creates new array
+    <code class="code">[|f a1 b1; ...; f an bn|]</code>.
+</div>
+</td></tr>
 <tr><td><a href="Option.html#VALmap_default">map_default</a> [<a href="Option.html">Option</a>]</td>
 <td><div class="info">
 <code class="code">map_default f x (Some v)</code> returns <code class="code">f v</code> and <code class="code">map_default f x None</code>

@@ -39,57 +39,55 @@
 <center><h1>Module <a href="type_ExtHashtbl.Hashtbl.html">ExtHashtbl.Hashtbl</a></h1></center>
 <br>
 <pre><span class="keyword">module</span> Hashtbl: <code class="code">sig</code> <a href="ExtHashtbl.Hashtbl.html">..</a> <code class="code">end</code></pre><hr width="100%">
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type">('a, 'b)</code> t = <code class="type">('a, 'b) Hashtbl.t</code> </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b)</code> t</span> = <code class="type">('a, 'b) Hashtbl.t</code> </pre>
 <div class="info">
 The type of a hashtable.<br>
 </div>
 
 <br>
-<a name="6_NewFunctions"></a>
-<h6>New Functions</h6><br>
-<pre><span class="keyword">val</span> <a name="VALexists"></a>exists : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> bool</code></pre><div class="info">
+<span id="6_NewFunctions"><h6>New Functions</h6></span><br>
+<pre><span id="VALexists"><span class="keyword">val</span> exists</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> bool</code></pre><div class="info">
 <code class="code">exists h k</code> returns true is at least one item with key <code class="code">k</code> is
 		found in the hashtable.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALkeys"></a>keys : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
+<pre><span id="VALkeys"><span class="keyword">val</span> keys</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 Return an enumeration of all the keys of a hashtable.
 	    If the key is in the Hashtable multiple times, all occurrences
 	    will be returned.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALvalues"></a>values : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'b <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
+<pre><span id="VALvalues"><span class="keyword">val</span> values</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'b <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 Return an enumeration of all the values of a hashtable.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALenum"></a>enum : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> ('a * 'b) <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
+<pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> ('a * 'b) <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 Return an enumeration of (key,value) pairs of a hashtable.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALof_enum"></a>of_enum : <code class="type">('a * 'b) <a href="Enum.html#TYPEt">Enum.t</a> -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALof_enum"><span class="keyword">val</span> of_enum</span> : <code class="type">('a * 'b) <a href="Enum.html#TYPEt">Enum.t</a> -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a></code></pre><div class="info">
 Create a hashtable from a (key,value) enumeration.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfind_default"></a>find_default : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b -> 'b</code></pre><div class="info">
+<pre><span id="VALfind_default"><span class="keyword">val</span> find_default</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b -> 'b</code></pre><div class="info">
 Find a binding for the key, and return a default
 	    value if not found<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfind_option"></a>find_option : <code class="type">('a, 'b) Hashtbl.t -> 'a -> 'b option</code></pre><div class="info">
+<pre><span id="VALfind_option"><span class="keyword">val</span> find_option</span> : <code class="type">('a, 'b) Hashtbl.t -> 'a -> 'b option</code></pre><div class="info">
 Find a binding for the key, or return <code class="code">None</code> if no
 		value is found<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALremove_all"></a>remove_all : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info">
+<pre><span id="VALremove_all"><span class="keyword">val</span> remove_all</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info">
 Remove all bindings for the given key<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALmap"></a>map : <code class="type">('a -> 'b) -> ('c, 'a) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> ('c, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> ('c, 'a) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> ('c, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a></code></pre><div class="info">
 <code class="code">map f x</code> creates a new hashtable with the same
 	    keys as <code class="code">x</code>, but with the function <code class="code">f</code> applied to
 		all the values<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALlength"></a>length : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> int</code></pre><div class="info">
+<pre><span id="VALlength"><span class="keyword">val</span> length</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> int</code></pre><div class="info">
 Return the number of elements inserted into the Hashtbl 
 		(including duplicates)<br>
 </div>
 <br>
-<a name="6_OlderFunctions"></a>
-<h6>Older Functions</h6><br>
+<span id="6_OlderFunctions"><h6>Older Functions</h6></span><br>
 <br>
 Please refer to the Ocaml Manual for documentation of these
 		functions. (note : functor support removed to avoid code
 		duplication).<br>
-<pre><span class="keyword">val</span> <a name="VALcreate"></a>create : <code class="type">int -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALclear"></a>clear : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALadd"></a>add : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALcopy"></a>copy : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALfind"></a>find : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b</code></pre><pre><span class="keyword">val</span> <a name="VALfind_all"></a>find_all : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b list</code></pre><pre><span class="keyword">val</span> <a name="VALmem"></a>mem : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> bool</code></pre><pre><span class="keyword">val</span> <a name="VALremove"></a>remove : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALreplace"></a>replace : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALiter"></a>iter : <code class="type">('a -> 'b -> unit) -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> unit</code></pre><pre><span class="keyword">val</span> <a name="VALfold"></a>fold : <code class="type">('a -> 'b -> 'c -> 'c) -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'c -> 'c</code></pre><pre><span class="keyword">val</span> <a name="VALhash"></a>hash : <code class="type">'a -> int</code></pre></body></html>
+<pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">int -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a></code></pre><pre><span id="VALclear"><span class="keyword">val</span> clear</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALadd"><span class="keyword">val</span> add</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b -> unit</code></pre><pre><span id="VALcopy"><span class="keyword">val</span> copy</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a></code></pre><pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b</code></pre><pre><span id="VALfind_all"><span class="keyword">val</span> find_all</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b list</code></pre><pre><span id="VALmem"><span class="keyword">val</span> mem</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> bool</code></pre><pre><span id="VALremove"><span class="keyword">val</span> remove</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> unit</code></pre><pre><span id="VALreplace"><span class="keyword">val</span> replace</span> : <code class="type">('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'a -> 'b -> unit</code></pre><pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> 'b -> unit) -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a -> 'b -> 'c -> 'c) -> ('a, 'b) <a href="ExtHashtbl.Hashtbl.html#TYPEt">t</a> -> 'c -> 'c</code></pre><pre><span id="VALhash"><span class="keyword">val</span> hash</span> : <code class="type">'a -> int</code></pre></body></html>

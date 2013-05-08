@@ -45,7 +45,7 @@
 	are describing the "inflate" algorithm used in most popular file formats.
 	This format is also the one used by the popular ZLib library.<br>
 <hr width="100%">
-<br><code><span class="keyword">type</span> <a name="TYPEerror_msg"></a><code class="type"></code>error_msg = </code><table class="typetable">
+<br><code><span id="TYPEerror_msg"><span class="keyword">type</span> <code class="type"></code>error_msg</span> = </code><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
@@ -83,11 +83,11 @@
 </tr></table>
 
 
-<pre><span class="keyword">exception</span> <a name="EXCEPTIONError"></a>Error <span class="keyword">of</span> <code class="type"><a href="Unzip.html#TYPEerror_msg">error_msg</a></code></pre>
-<pre><span class="keyword">val</span> <a name="VALinflate"></a>inflate : <code class="type">?header:bool -> <a href="IO.html#TYPEinput">IO.input</a> -> <a href="IO.html#TYPEinput">IO.input</a></code></pre><div class="info">
+<pre><span id="EXCEPTIONError"><span class="keyword">exception</span> Error</span> <span class="keyword">of</span> <code class="type"><a href="Unzip.html#TYPEerror_msg">error_msg</a></code></pre>
+<pre><span id="VALinflate"><span class="keyword">val</span> inflate</span> : <code class="type">?header:bool -> <a href="IO.html#TYPEinput">IO.input</a> -> <a href="IO.html#TYPEinput">IO.input</a></code></pre><div class="info">
 wrap an input using "inflate" decompression algorithm. raises <code class="code">Error</code> if
   an error occurs (this can only be caused by malformed input data).<br>
 </div>
-<pre><span class="keyword">type</span> <a name="TYPEt"></a><code class="type"></code>t </pre>
+<pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 
-<pre><span class="keyword">val</span> <a name="VALinflate_init"></a>inflate_init : <code class="type">?header:bool -> <a href="IO.html#TYPEinput">IO.input</a> -> <a href="Unzip.html#TYPEt">t</a></code></pre><pre><span class="keyword">val</span> <a name="VALinflate_data"></a>inflate_data : <code class="type"><a href="Unzip.html#TYPEt">t</a> -> string -> int -> int -> int</code></pre></body></html>
+<pre><span id="VALinflate_init"><span class="keyword">val</span> inflate_init</span> : <code class="type">?header:bool -> <a href="IO.html#TYPEinput">IO.input</a> -> <a href="Unzip.html#TYPEt">t</a></code></pre><pre><span id="VALinflate_data"><span class="keyword">val</span> inflate_data</span> : <code class="type"><a href="Unzip.html#TYPEt">t</a> -> string -> int -> int -> int</code></pre></body></html>

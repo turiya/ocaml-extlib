@@ -42,51 +42,51 @@
 <br>
 <pre><span class="keyword">module</span> Std: <code class="code">sig</code> <a href="Std.html">..</a> <code class="code">end</code></pre>Additional functions.<br>
 <hr width="100%">
-<pre><span class="keyword">val</span> <a name="VALinput_lines"></a>input_lines : <code class="type">Pervasives.in_channel -> string <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
+<pre><span id="VALinput_lines"><span class="keyword">val</span> input_lines</span> : <code class="type">Pervasives.in_channel -> string <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 Returns an enumeration over lines of an input channel, as read by the
  <code class="code">input_line</code> function.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALinput_chars"></a>input_chars : <code class="type">Pervasives.in_channel -> char <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
+<pre><span id="VALinput_chars"><span class="keyword">val</span> input_chars</span> : <code class="type">Pervasives.in_channel -> char <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 Returns an enumeration over characters of an input channel.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALinput_list"></a>input_list : <code class="type">Pervasives.in_channel -> string list</code></pre><div class="info">
+<pre><span id="VALinput_list"><span class="keyword">val</span> input_list</span> : <code class="type">Pervasives.in_channel -> string list</code></pre><div class="info">
 Returns the list of lines read from an input channel.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALinput_all"></a>input_all : <code class="type">Pervasives.in_channel -> string</code></pre><div class="info">
+<pre><span id="VALinput_all"><span class="keyword">val</span> input_all</span> : <code class="type">Pervasives.in_channel -> string</code></pre><div class="info">
 Return the whole contents of an input channel as a single
  string.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALprint_bool"></a>print_bool : <code class="type">bool -> unit</code></pre><div class="info">
+<pre><span id="VALprint_bool"><span class="keyword">val</span> print_bool</span> : <code class="type">bool -> unit</code></pre><div class="info">
 Print a boolean to stdout.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALprerr_bool"></a>prerr_bool : <code class="type">bool -> unit</code></pre><div class="info">
+<pre><span id="VALprerr_bool"><span class="keyword">val</span> prerr_bool</span> : <code class="type">bool -> unit</code></pre><div class="info">
 Print a boolean to stderr.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALinput_file"></a>input_file : <code class="type">?bin:bool -> string -> string</code></pre><div class="info">
+<pre><span id="VALinput_file"><span class="keyword">val</span> input_file</span> : <code class="type">?bin:bool -> string -> string</code></pre><div class="info">
 returns the data of a given filename.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALoutput_file"></a>output_file : <code class="type">filename:string -> text:string -> unit</code></pre><div class="info">
+<pre><span id="VALoutput_file"><span class="keyword">val</span> output_file</span> : <code class="type">filename:string -> text:string -> unit</code></pre><div class="info">
 creates a filename, write text into it and close it.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALstring_of_char"></a>string_of_char : <code class="type">char -> string</code></pre><div class="info">
+<pre><span id="VALstring_of_char"><span class="keyword">val</span> string_of_char</span> : <code class="type">char -> string</code></pre><div class="info">
 creates a string from a char.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALidentity"></a>identity : <code class="type">'a -> 'a</code></pre><div class="info">
+<pre><span id="VALidentity"><span class="keyword">val</span> identity</span> : <code class="type">'a -> 'a</code></pre><div class="info">
 the identity function.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALunique"></a>unique : <code class="type">unit -> int</code></pre><div class="info">
+<pre><span id="VALunique"><span class="keyword">val</span> unique</span> : <code class="type">unit -> int</code></pre><div class="info">
 returns an unique identifier every time it is called.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALdump"></a>dump : <code class="type">'a -> string</code></pre><div class="info">
+<pre><span id="VALdump"><span class="keyword">val</span> dump</span> : <code class="type">'a -> string</code></pre><div class="info">
 represent a runtime value as a string. Since types are lost at compile
 	time, the representation might not match your type. For example, None
 	will be printed 0 since they share the same runtime representation.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALprint"></a>print : <code class="type">'a -> unit</code></pre><div class="info">
+<pre><span id="VALprint"><span class="keyword">val</span> print</span> : <code class="type">'a -> unit</code></pre><div class="info">
 print the representation of a runtime value on stdout.
 	See remarks for <code class="code">dump</code>.<br>
 </div>
-<pre><span class="keyword">val</span> <a name="VALfinally"></a>finally : <code class="type">(unit -> unit) -> ('a -> 'b) -> 'a -> 'b</code></pre><div class="info">
+<pre><span id="VALfinally"><span class="keyword">val</span> finally</span> : <code class="type">(unit -> unit) -> ('a -> 'b) -> 'a -> 'b</code></pre><div class="info">
 <code class="code">finally fend f x</code> calls <code class="code">f x</code> and then <code class="code">fend()</code> even if <code class="code">f x</code> raised
 	an exception.<br>
 </div>
