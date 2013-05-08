@@ -3,6 +3,10 @@
 
 = !ExtLib release notes =
 
+== extlib-1.5.4 (2013-05-08 - trunk @ r407) ==
+ * Fix installation
+ * Streamline release process
+
 == extlib-1.5.3 (2012-08-12 - trunk @ r397) ==
  * Bug fixes / improvements:
   * OCaml 4.00 compatibility (Hashtbl)
