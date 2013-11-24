@@ -3,6 +3,20 @@
 
 = !ExtLib release notes =
 
+== extlib-1.6.0 (2013-11-25 - trunk @ r429) ==
+ * Fix OCaml 4 Hashtbl compatibility
+ * Install additionally `extlib_min` with reduced set of modules (to mitigate linking conflicts)
+ * Build with debugging information by default
+ * Fix signature for `ExtList.iteri` and `OptParse.OptParser.error`
+ * Speed up `String.nsplit`
+ * New functions:
+  * `String.find_from` (by Alexander Markov)
+  * `IO.output_strings` (by Mehdi Dogguy)
+  * `IO.read_float32` and `IO.write_float32` (by Philippe Strauss)
+  * `IO.scanf` (by Warren Harris)
+  * `UTF8.substring` (by Berke Durak)
+  * `Enum.next`
+
 == extlib-1.5.4 (2013-05-08 - trunk @ r407) ==
  * Fix installation
  * Streamline release process

@@ -20,8 +20,9 @@ make run
   * svn copy https://ocaml-extlib.googlecode.com/svn/trunk https://ocaml-extlib.googlecode.com/svn/tags/extlib-VERSION`
   * Mention trunk revision in the commit message
  # Upload the release tarball to http://code.google.com/p/ocaml-extlib/downloads
- # Update the API reference:
+ # Update API reference and changelog:
   * Compile the API ref by running `make doc` in `trunk/extlib`
   * `cp trunk/extlib/doc/* doc/apiref/`
   * Commit change to SVN (review `svn st` for added files)
+  * Update wiki/ReleaseNotes.wiki
  # Announce the new extlib release on OCaml & extlib mailing lists.
