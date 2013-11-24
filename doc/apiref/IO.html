@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -40,19 +41,20 @@
 <title>IO</title>
 </head>
 <body>
-<div class="navbar"><a href="Global.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="OptParse.html">Next</a>
+<div class="navbar"><a class="pre" href="Global.html" title="Global">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="OptParse.html" title="OptParse">Next</a>
 </div>
-<center><h1>Module <a href="type_IO.html">IO</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> IO: <code class="code">sig</code> <a href="IO.html">..</a> <code class="code">end</code></pre>High-order abstract I/O.
+<h1>Module <a href="type_IO.html">IO</a></h1>
+<pre><span class="keyword">module</span> IO: <code class="code">sig</code> <a href="IO.html">..</a> <code class="code">end</code></pre><div class="info">
+High-order abstract I/O.
 <p>
 
 	IO module simply deals with abstract inputs/outputs. It provides a
 	set of methods for working with these IO as well as several
 	constructors that enable to write to an underlying channel, buffer,
 	or enum.<br>
+</div>
 <hr width="100%">
 <pre><span id="TYPEinput"><span class="keyword">type</span> <code class="type"></code>input</span> </pre>
 <div class="info">
@@ -79,7 +81,7 @@ This exception is raised when reading on a closed input.<br>
 This exception is raised when reading on a closed output.<br>
 </div>
 <br>
-<span id="6_StandardAPI"><h6>Standard API</h6></span><br>
+<h6 id="6_StandardAPI">Standard API</h6><br>
 <pre><span id="VALread"><span class="keyword">val</span> read</span> : <code class="type"><a href="IO.html#TYPEinput">input</a> -> char</code></pre><div class="info">
 Read a single char from an input or raise <code class="code">No_more_input</code> if
   no input available.<br>
@@ -136,13 +138,18 @@ Close the output and return its accumulator data.
   It can no longer be written.<br>
 </div>
 <br>
-<span id="6_CreationofIOInputsOutputs"><h6>Creation of IO Inputs/Outputs</h6></span><br>
+<h6 id="6_CreationofIOInputsOutputs">Creation of IO Inputs/Outputs</h6><br>
 <pre><span id="VALinput_string"><span class="keyword">val</span> input_string</span> : <code class="type">string -> <a href="IO.html#TYPEinput">input</a></code></pre><div class="info">
 Create an input that will read from a string.<br>
 </div>
 <pre><span id="VALoutput_string"><span class="keyword">val</span> output_string</span> : <code class="type">unit -> string <a href="IO.html#TYPEoutput">output</a></code></pre><div class="info">
 Create an output that will write into a string in an efficient way.
   When closed, the output returns all the data written into it.<br>
+</div>
+<pre><span id="VALoutput_strings"><span class="keyword">val</span> output_strings</span> : <code class="type">unit -> string list <a href="IO.html#TYPEoutput">output</a></code></pre><div class="info">
+Create an output that will write into a string in an efficient way.
+  When closed, the output returns all the data written into it. 
+  Several strings are used in case the output size excess max_string_length<br>
 </div>
 <pre><span id="VALinput_channel"><span class="keyword">val</span> input_channel</span> : <code class="type">Pervasives.in_channel -> <a href="IO.html#TYPEinput">input</a></code></pre><div class="info">
 Create an input that will read from a channel.<br>
@@ -164,7 +171,10 @@ Fully create an input by giving all the needed functions.<br>
 Fully create an output by giving all the needed functions.<br>
 </div>
 <br>
-<span id="6_Utilities"><h6>Utilities</h6></span><br>
+<h6 id="6_Utilities">Utilities</h6><br>
+<pre><span id="VALscanf"><span class="keyword">val</span> scanf</span> : <code class="type"><a href="IO.html#TYPEinput">input</a> -> ('a, 'b, 'c, 'd) Scanf.scanner</code></pre><div class="info">
+The scanf function works for any input.<br>
+</div>
 <pre><span id="VALprintf"><span class="keyword">val</span> printf</span> : <code class="type">'a <a href="IO.html#TYPEoutput">output</a> -> ('b, unit, string, unit) Pervasives.format4 -> 'b</code></pre><div class="info">
 The printf function works for any output.<br>
 </div>
@@ -188,7 +198,7 @@ You can safely transform any output to an unit output in a safe way
   by using this function.<br>
 </div>
 <br>
-<span id="6_BinaryfilesAPI"><h6>Binary files API</h6></span>
+<h6 id="6_BinaryfilesAPI">Binary files API</h6>
 <p>
 
 	Here is some API useful for working with binary files, in particular
@@ -221,8 +231,11 @@ Read a signed 32-bit integer as an OCaml int32.<br>
 <pre><span id="VALread_i64"><span class="keyword">val</span> read_i64</span> : <code class="type"><a href="IO.html#TYPEinput">input</a> -> int64</code></pre><div class="info">
 Read a signed 64-bit integer as an OCaml int64.<br>
 </div>
+<pre><span id="VALread_float32"><span class="keyword">val</span> read_float32</span> : <code class="type"><a href="IO.html#TYPEinput">input</a> -> float</code></pre><div class="info">
+Read an IEEE single precision floating point value (32 bits).<br>
+</div>
 <pre><span id="VALread_double"><span class="keyword">val</span> read_double</span> : <code class="type"><a href="IO.html#TYPEinput">input</a> -> float</code></pre><div class="info">
-Read an IEEE double precision floating point value.<br>
+Read an IEEE double precision floating point value (64 bits).<br>
 </div>
 <pre><span id="VALread_string"><span class="keyword">val</span> read_string</span> : <code class="type"><a href="IO.html#TYPEinput">input</a> -> string</code></pre><div class="info">
 Read a null-terminated string.<br>
@@ -248,8 +261,11 @@ Write an OCaml int32.<br>
 <pre><span id="VALwrite_i64"><span class="keyword">val</span> write_i64</span> : <code class="type">'a <a href="IO.html#TYPEoutput">output</a> -> int64 -> unit</code></pre><div class="info">
 Write an OCaml int64.<br>
 </div>
+<pre><span id="VALwrite_float32"><span class="keyword">val</span> write_float32</span> : <code class="type">'a <a href="IO.html#TYPEoutput">output</a> -> float -> unit</code></pre><div class="info">
+Write an IEEE single precision floating point value (32 bits).<br>
+</div>
 <pre><span id="VALwrite_double"><span class="keyword">val</span> write_double</span> : <code class="type">'a <a href="IO.html#TYPEoutput">output</a> -> float -> unit</code></pre><div class="info">
-Write an IEEE double precision floating point value.<br>
+Write an IEEE double precision floating point value (64 bits).<br>
 </div>
 <pre><span id="VALwrite_string"><span class="keyword">val</span> write_string</span> : <code class="type">'a <a href="IO.html#TYPEoutput">output</a> -> string -> unit</code></pre><div class="info">
 Write a string and append an null character.<br>
@@ -262,7 +278,7 @@ Write a line and append a LF (it might be converted
 Same as operations above, but use big-endian encoding
 </div>
 <br>
-<span id="6_BitsAPI"><h6>Bits API</h6></span>
+<h6 id="6_BitsAPI">Bits API</h6>
 <p>
 
 	This enable you to read and write from an IO bit-by-bit or several bits
@@ -292,7 +308,7 @@ Flush remaining unwritten bits, adding up to 7 bits which values 0.<br>
 Drop up to 7 buffered bits and restart to next input character.<br>
 </div>
 <br>
-<span id="6_GenericIOObjectWrappers"><h6>Generic IO Object Wrappers</h6></span>
+<h6 id="6_GenericIOObjectWrappers">Generic IO Object Wrappers</h6>
 <p>
 
 	Theses OO Wrappers have been written to provide easy support of ExtLib

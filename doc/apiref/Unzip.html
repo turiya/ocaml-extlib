@@ -19,6 +19,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -33,52 +34,53 @@
 <link title="Unzip" rel="Chapter" href="Unzip.html"><title>Unzip</title>
 </head>
 <body>
-<div class="navbar"><a href="UTF8.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
+<div class="navbar"><a class="pre" href="UTF8.html" title="UTF8">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
 &nbsp;</div>
-<center><h1>Module <a href="type_Unzip.html">Unzip</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> Unzip: <code class="code">sig</code> <a href="Unzip.html">..</a> <code class="code">end</code></pre>Decompression algorithm.
+<h1>Module <a href="type_Unzip.html">Unzip</a></h1>
+<pre><span class="keyword">module</span> Unzip: <code class="code">sig</code> <a href="Unzip.html">..</a> <code class="code">end</code></pre><div class="info">
+Decompression algorithm.
 <p>
 
 	Unzip decompression algorithm is compliant with RFC 1950 and 1951 which
 	are describing the "inflate" algorithm used in most popular file formats.
 	This format is also the one used by the popular ZLib library.<br>
+</div>
 <hr width="100%">
-<br><code><span id="TYPEerror_msg"><span class="keyword">type</span> <code class="type"></code>error_msg</span> = </code><table class="typetable">
+<pre><code><span id="TYPEerror_msg"><span class="keyword">type</span> <code class="type"></code>error_msg</span> = </code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span class="constructor">Invalid_huffman</span></code></td>
+<code><span id="TYPEELTerror_msg.Invalid_huffman"><span class="constructor">Invalid_huffman</span></span></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span class="constructor">Invalid_data</span></code></td>
+<code><span id="TYPEELTerror_msg.Invalid_data"><span class="constructor">Invalid_data</span></span></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span class="constructor">Invalid_crc</span></code></td>
+<code><span id="TYPEELTerror_msg.Invalid_crc"><span class="constructor">Invalid_crc</span></span></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span class="constructor">Truncated_data</span></code></td>
+<code><span id="TYPEELTerror_msg.Truncated_data"><span class="constructor">Truncated_data</span></span></code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code><span class="keyword">|</span></code></td>
 <td align="left" valign="top" >
-<code><span class="constructor">Unsupported_dictionary</span></code></td>
+<code><span id="TYPEELTerror_msg.Unsupported_dictionary"><span class="constructor">Unsupported_dictionary</span></span></code></td>
 
 </tr></table>
 

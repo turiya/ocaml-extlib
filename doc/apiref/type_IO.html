@@ -15,6 +15,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -49,6 +50,7 @@
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;close_out&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;input_string&nbsp;:&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">IO</span>.input<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_string&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="constructor">IO</span>.output<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_strings&nbsp;:&nbsp;unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;list&nbsp;<span class="constructor">IO</span>.output<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;input_channel&nbsp;:&nbsp;<span class="constructor">Pervasives</span>.in_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">IO</span>.input<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;output_channel&nbsp;:&nbsp;<span class="constructor">Pervasives</span>.out_channel&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit&nbsp;<span class="constructor">IO</span>.output<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;input_enum&nbsp;:&nbsp;char&nbsp;<span class="constructor">Enum</span>.t&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="constructor">IO</span>.input<br>
@@ -60,6 +62,7 @@
 &nbsp;&nbsp;&nbsp;&nbsp;write:(char&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;output:(string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int)&nbsp;<span class="keywordsign">-&gt;</span><br>
 &nbsp;&nbsp;&nbsp;&nbsp;flush:(unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;close:(unit&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a)&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;scanf&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>a,&nbsp;<span class="keywordsign">'</span>b,&nbsp;<span class="keywordsign">'</span>c,&nbsp;<span class="keywordsign">'</span>d)&nbsp;<span class="constructor">Scanf</span>.scanner<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;printf&nbsp;:<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;(<span class="keywordsign">'</span>b,&nbsp;unit,&nbsp;string,&nbsp;unit)&nbsp;<span class="constructor">Pervasives</span>.format4&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;<span class="keywordsign">'</span>b<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_all&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
@@ -75,6 +78,7 @@
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_i32&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_real_i32&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int32<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_i64&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_float32&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_double&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_string&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_line&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string<br>
@@ -84,6 +88,7 @@
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_i32&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_real_i32&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_i64&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_float32&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_double&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_string&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_line&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;string&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
@@ -94,12 +99,14 @@
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_i32&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_real_i32&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int32<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_i64&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_float32&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;read_double&nbsp;:&nbsp;<span class="constructor">IO</span>.input&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_ui16&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_i16&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_i32&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_real_i32&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int32&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_i64&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;int64&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
+&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_float32&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">val</span>&nbsp;write_double&nbsp;:&nbsp;<span class="keywordsign">'</span>a&nbsp;<span class="constructor">IO</span>.output&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;float&nbsp;<span class="keywordsign">-&gt;</span>&nbsp;unit<br>
 &nbsp;&nbsp;&nbsp;&nbsp;<span class="keyword">end</span><br>
 &nbsp;&nbsp;<span class="keyword">type</span>&nbsp;in_bits<br>

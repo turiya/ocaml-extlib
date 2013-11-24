@@ -19,6 +19,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -38,19 +39,20 @@
 <title>OptParse.OptParser</title>
 </head>
 <body>
-<div class="navbar"><a href="OptParse.Formatter.html">Previous</a>
-&nbsp;<a href="OptParse.html">Up</a>
+<div class="navbar"><a class="pre" href="OptParse.Formatter.html" title="OptParse.Formatter">Previous</a>
+&nbsp;<a class="up" href="OptParse.html" title="OptParse">Up</a>
 &nbsp;</div>
-<center><h1>Module <a href="type_OptParse.OptParser.html">OptParse.OptParser</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> OptParser: <code class="code">sig</code> <a href="OptParse.OptParser.html">..</a> <code class="code">end</code></pre>This module contains the option parser itself.
+<h1>Module <a href="type_OptParse.OptParser.html">OptParse.OptParser</a></h1>
+<pre><span class="keyword">module</span> OptParser: <code class="code">sig</code> <a href="OptParse.OptParser.html">..</a> <code class="code">end</code></pre><div class="info">
+This module contains the option parser itself.
 <p>
 
   It provides functions to create, populate and use option parsers to
   parse command line arguments.<br>
+</div>
 <hr width="100%">
 <br>
-<span id="6_Exceptions"><h6>Exceptions</h6></span><br>
+<h6 id="6_Exceptions">Exceptions</h6><br>
 <pre><span id="EXCEPTIONOption_conflict"><span class="keyword">exception</span> Option_conflict</span> <span class="keyword">of</span> <code class="type">string</code></pre>
 <div class="info">
 <code class="code">Option_conflict name</code> is raised by <a href="OptParse.OptParser.html#VALadd"><code class="code">OptParse.OptParser.add</code></a>
@@ -60,7 +62,7 @@
       conflicting option names.<br>
 </div>
 <br>
-<span id="6_Types"><h6>Types</h6></span><br>
+<h6 id="6_Types">Types</h6><br>
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> </pre>
 <div class="info">
 The type of an option parser.<br>
@@ -72,7 +74,7 @@ The type of an option group.<br>
 </div>
 
 <br>
-<span id="6_Optionparsercreation"><h6>Option parser creation</h6></span><br>
+<h6 id="6_Optionparsercreation">Option parser creation</h6><br>
 <pre><span id="VALmake"><span class="keyword">val</span> make</span> : <code class="type">?usage:string -><br>       ?description:string -><br>       ?version:string -><br>       ?suppress_usage:bool -><br>       ?suppress_help:bool -><br>       ?prog:string -><br>       ?formatter:<a href="OptParse.Formatter.html#TYPEt">OptParse.Formatter.t</a> -> unit -> <a href="OptParse.OptParser.html#TYPEt">t</a></code></pre><div class="info">
 Creates a new option parser with the given options.<br>
 <b>Returns</b> the new option parser.<br>
@@ -117,8 +119,8 @@ Add a group to the option parser.<br>
 <div class="param_info"><code class="code">parent</code> : is the parent group (if any).</div>
 <div class="param_info"><code class="code">description</code> : is a description of the group.</div>
 <br>
-<span id="6_Outputanderrorhandling"><h6>Output and error handling</h6></span><br>
-<pre><span id="VALerror"><span class="keyword">val</span> error</span> : <code class="type"><a href="OptParse.OptParser.html#TYPEt">t</a> -><br>       ?chn:Pervasives.out_channel -> ?status:int -> string -> unit</code></pre><div class="info">
+<h6 id="6_Outputanderrorhandling">Output and error handling</h6><br>
+<pre><span id="VALerror"><span class="keyword">val</span> error</span> : <code class="type"><a href="OptParse.OptParser.html#TYPEt">t</a> -><br>       ?chn:Pervasives.out_channel -> ?status:int -> string -> 'a</code></pre><div class="info">
 Display an error message and exit the program. The error
       message is printed to the channel <code class="code">chn</code> (default is
       <code class="code">Pervasives.stderr</code>) and the program exits with exit status
@@ -129,7 +131,7 @@ Display the usage message to the channel <code class="code">chn</code> (default 
       <code class="code">Pervasives.stdout</code>) and return.<br>
 </div>
 <br>
-<span id="6_Optionparsing"><h6>Option parsing</h6></span><br>
+<h6 id="6_Optionparsing">Option parsing</h6><br>
 <pre><span id="VALparse"><span class="keyword">val</span> parse</span> : <code class="type"><a href="OptParse.OptParser.html#TYPEt">t</a> -><br>       ?first:int -> ?last:int -> string array -> string list</code></pre><div class="info">
 Parse arguments as if the arguments <code class="code">args.(first)</code>,
       <code class="code">args.(first+1)</code>, ..., <code class="code">args.(last)</code> had been given on the

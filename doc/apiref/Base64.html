@@ -19,6 +19,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -33,17 +34,18 @@
 <link title="Unzip" rel="Chapter" href="Unzip.html"><title>Base64</title>
 </head>
 <body>
-<div class="navbar">&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="BitSet.html">Next</a>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="BitSet.html" title="BitSet">Next</a>
 </div>
-<center><h1>Module <a href="type_Base64.html">Base64</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> Base64: <code class="code">sig</code> <a href="Base64.html">..</a> <code class="code">end</code></pre>Base64 codec.
+<h1>Module <a href="type_Base64.html">Base64</a></h1>
+<pre><span class="keyword">module</span> Base64: <code class="code">sig</code> <a href="Base64.html">..</a> <code class="code">end</code></pre><div class="info">
+Base64 codec.
 <p>
 
 	8-bit characters are encoded into 6-bit ones using ASCII lookup tables.
 	Default tables maps 0..63 values on characters A-Z, a-z, 0-9, '+' and '/'
 	(in that order).<br>
+</div>
 <hr width="100%">
 <pre><span id="EXCEPTIONInvalid_char"><span class="keyword">exception</span> Invalid_char</span></pre>
 <div class="info">

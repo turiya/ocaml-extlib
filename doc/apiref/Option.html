@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -34,13 +35,13 @@
 <link title="Unzip" rel="Chapter" href="Unzip.html"><title>Option</title>
 </head>
 <body>
-<div class="navbar"><a href="OptParse.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="PMap.html">Next</a>
+<div class="navbar"><a class="pre" href="OptParse.html" title="OptParse">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="PMap.html" title="PMap">Next</a>
 </div>
-<center><h1>Module <a href="type_Option.html">Option</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> Option: <code class="code">sig</code> <a href="Option.html">..</a> <code class="code">end</code></pre>Functions for the option type.
+<h1>Module <a href="type_Option.html">Option</a></h1>
+<pre><span class="keyword">module</span> Option: <code class="code">sig</code> <a href="Option.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions for the option type.
 <p>
 
     Options are an Ocaml standard type that can be either <code class="code">None</code> (undefined)
@@ -48,6 +49,7 @@
 	to represent undefined values (a little like NULL in C, but in a type
 	and memory safe way). This module adds some functions for working with
 	options.<br>
+</div>
 <hr width="100%">
 <pre><span id="VALmay"><span class="keyword">val</span> may</span> : <code class="type">('a -> unit) -> 'a option -> unit</code></pre><div class="info">
 <code class="code">may f (Some x)</code> calls <code class="code">f x</code> and <code class="code">may f None</code> does nothing.<br>

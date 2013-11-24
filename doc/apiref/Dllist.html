@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -37,23 +38,24 @@
 <title>Dllist</title>
 </head>
 <body>
-<div class="navbar"><a href="BitSet.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="DynArray.html">Next</a>
+<div class="navbar"><a class="pre" href="BitSet.html" title="BitSet">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="DynArray.html" title="DynArray">Next</a>
 </div>
-<center><h1>Module <a href="type_Dllist.html">Dllist</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> Dllist: <code class="code">sig</code> <a href="Dllist.html">..</a> <code class="code">end</code></pre>A mutable, imperative, circular, doubly linked list library
+<h1>Module <a href="type_Dllist.html">Dllist</a></h1>
+<pre><span class="keyword">module</span> Dllist: <code class="code">sig</code> <a href="Dllist.html">..</a> <code class="code">end</code></pre><div class="info">
+A mutable, imperative, circular, doubly linked list library
 <p>
 
     This module implements a doubly linked list in a mutable or imperitive
     style (changes to the list are visible to all copies of the list).<br>
+</div>
 <hr width="100%">
 <pre><span id="TYPEnode_t"><span class="keyword">type</span> <code class="type">'a</code> node_t</span> </pre>
 
 <pre><span id="EXCEPTIONEmpty"><span class="keyword">exception</span> Empty</span></pre>
 <br>
-<span id="6_nodefunctions"><h6>node functions </h6></span><br>
+<h6 id="6_nodefunctions">node functions </h6><br>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">'a -> 'a <a href="Dllist.html#TYPEnode_t">node_t</a></code></pre><div class="info">
 Creates a node.  This is an O(1) operation.<br>
 </div>
@@ -157,7 +159,7 @@ Allocate a new list, with entirely new nodes, whose values are
     does not modify the given list.  This is an O(N) operation.<br>
 </div>
 <br>
-<span id="6_listconversion"><h6>list conversion </h6></span><br>
+<h6 id="6_listconversion">list conversion </h6><br>
 <pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a list</code></pre><div class="info">
 Converts a dllist to a normal list.  This is an O(N) operation.<br>
 </div>
@@ -166,7 +168,7 @@ Converts from a normal list to a Dllist and returns the first node. Raises
     <code class="code">Empty</code> if given list is empty.  This is an O(N) operation.<br>
 </div>
 <br>
-<span id="6_enums"><h6>enums </h6></span><br>
+<h6 id="6_enums">enums </h6><br>
 <pre><span id="VALenum"><span class="keyword">val</span> enum</span> : <code class="type">'a <a href="Dllist.html#TYPEnode_t">node_t</a> -> 'a <a href="Enum.html#TYPEt">Enum.t</a></code></pre><div class="info">
 Create an enum of the list.
     Note that modifying the list while the enum exists will have undefined

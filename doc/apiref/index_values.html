@@ -16,6 +16,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -30,7 +31,9 @@
 <link title="Unzip" rel="Chapter" href="Unzip.html"><title>Index of values</title>
 </head>
 <body>
-<center><h1>Index of values</h1></center>
+<div class="navbar">&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;</div>
+<h1>Index of values</h1>
 <table>
 <tr><td align="left"><br></td></tr>
 <tr><td><a href="ExtList.html#VAL(@)">(@)</a> [<a href="ExtList.html">ExtList</a>]</td>
@@ -38,6 +41,8 @@
 the new implementation for ( @ ) operator, see <code class="code">List.append</code>.
 </div>
 </td></tr>
+<tr><td><a href="ExtLib.html#VAL(@)">(@)</a> [<a href="ExtLib.html">ExtLib</a>]</td>
+<td></td></tr>
 <tr><td align="left"><br>A</td></tr>
 <tr><td><a href="RefList.html#VALadd">add</a> [<a href="RefList.html">RefList</a>]</td>
 <td><div class="info">
@@ -731,6 +736,13 @@ Same as find but takes an exception to be raised when
 	 returns <code class="code">true</code> or raises <code class="code">e</code> if such element as not been found.
 </div>
 </td></tr>
+<tr><td><a href="ExtString.String.html#VALfind_from">find_from</a> [<a href="ExtString.String.html">ExtString.String</a>]</td>
+<td><div class="info">
+<code class="code">find s i x</code> returns the starting index of the string <code class="code">x</code>
+			within the string <code class="code">s</code> (starting search from position <code class="code">i</code>) or
+			raises <code class="code">Invalid_string</code> if no such substring exists.
+</div>
+</td></tr>
 <tr><td><a href="ExtList.List.html#VALfind_map">find_map</a> [<a href="ExtList.List.html">ExtList.List</a>]</td>
 <td><div class="info">
 <code class="code">find_map pred list</code> finds the first element of <code class="code">list</code> for which
@@ -1037,7 +1049,7 @@ wrap an input using "inflate" decompression algorithm.
 <tr><td><a href="ExtString.String.html#VALinit">init</a> [<a href="ExtString.String.html">ExtString.String</a>]</td>
 <td><div class="info">
 <code class="code">init l f</code> returns the string of length <code class="code">l</code> with the chars
-		f 0 , f 1 , f 2 ...
+			f 0 , f 1 , f 2 ...
 </div>
 </td></tr>
 <tr><td><a href="ExtList.List.html#VALinit">init</a> [<a href="ExtList.List.html">ExtList.List</a>]</td>
@@ -1536,6 +1548,11 @@ Retrieve the name of a global.
    located immediately after <code class="code">i</code>.
 </div>
 </td></tr>
+<tr><td><a href="Enum.html#VALnext">next</a> [<a href="Enum.html">Enum</a>]</td>
+<td><div class="info">
+<code class="code">next e</code> returns the next element of <code class="code">e</code> (and removes it from enumeration).
+</div>
+</td></tr>
 <tr><td><a href="Dllist.html#VALnext">next</a> [<a href="Dllist.html">Dllist</a>]</td>
 <td><div class="info">
 Given a node, get the next element in the list after the node.
@@ -1709,6 +1726,11 @@ creates a filename, write text into it and close it.
 Create an output that will write into a string in an efficient way.
 </div>
 </td></tr>
+<tr><td><a href="IO.html#VALoutput_strings">output_strings</a> [<a href="IO.html">IO</a>]</td>
+<td><div class="info">
+Create an output that will write into a string in an efficient way.
+</div>
+</td></tr>
 <tr><td align="left"><br>P</td></tr>
 <tr><td><a href="OptParse.OptParser.html#VALparse">parse</a> [<a href="OptParse.OptParser.html">OptParse.OptParser</a>]</td>
 <td><div class="info">
@@ -1852,7 +1874,14 @@ Read an unsigned 8-bit integer.
 <td></td></tr>
 <tr><td><a href="IO.html#VALread_double">read_double</a> [<a href="IO.html">IO</a>]</td>
 <td><div class="info">
-Read an IEEE double precision floating point value.
+Read an IEEE double precision floating point value (64 bits).
+</div>
+</td></tr>
+<tr><td><a href="IO.BigEndian.html#VALread_float32">read_float32</a> [<a href="IO.BigEndian.html">IO.BigEndian</a>]</td>
+<td></td></tr>
+<tr><td><a href="IO.html#VALread_float32">read_float32</a> [<a href="IO.html">IO</a>]</td>
+<td><div class="info">
+Read an IEEE single precision floating point value (32 bits).
 </div>
 </td></tr>
 <tr><td><a href="IO.BigEndian.html#VALread_i16">read_i16</a> [<a href="IO.BigEndian.html">IO.BigEndian</a>]</td>
@@ -2062,6 +2091,11 @@ Find the first element in the reversed ref list matching
 <tr><td><a href="ExtString.String.html#VALrindex_from">rindex_from</a> [<a href="ExtString.String.html">ExtString.String</a>]</td>
 <td></td></tr>
 <tr><td align="left"><br>S</td></tr>
+<tr><td><a href="IO.html#VALscanf">scanf</a> [<a href="IO.html">IO</a>]</td>
+<td><div class="info">
+The scanf function works for any input.
+</div>
+</td></tr>
 <tr><td><a href="RefList.Index.html#VALset">set</a> [<a href="RefList.Index.html">RefList.Index</a>]</td>
 <td><div class="info">
 Change the element at the specified index
@@ -2137,7 +2171,7 @@ Sort the list using optional comparator (by default <code class="code">compare</
 <tr><td><a href="ExtString.String.html#VALsplit">split</a> [<a href="ExtString.String.html">ExtString.String</a>]</td>
 <td><div class="info">
 <code class="code">split s sep</code> splits the string <code class="code">s</code> between the first
-		occurrence of <code class="code">sep</code>.
+			occurrence of <code class="code">sep</code>.
 </div>
 </td></tr>
 <tr><td><a href="ExtList.List.html#VALsplit">split</a> [<a href="ExtList.List.html">ExtList.List</a>]</td>
@@ -2222,6 +2256,11 @@ Returns the string without the chars if they are at the beginning or
 <td><div class="info">
 <code class="code">sub darr start len</code> returns an array holding the subset of <code class="code">len</code>
 	elements from <code class="code">darr</code> starting with the element at index <code class="code">idx</code>.
+</div>
+</td></tr>
+<tr><td><a href="UTF8.html#VALsubstring">substring</a> [<a href="UTF8.html">UTF8</a>]</td>
+<td><div class="info">
+<code class="code">substring s i len</code> returns the substring made of the Unicode locations <code class="code">i</code> to <code class="code">i + len - 1</code> inclusive.
 </div>
 </td></tr>
 <tr><td><a href="BitSet.html#VALsym_diff">sym_diff</a> [<a href="BitSet.html">BitSet</a>]</td>
@@ -2422,7 +2461,14 @@ Write an unsigned 8-bit byte.
 <td></td></tr>
 <tr><td><a href="IO.html#VALwrite_double">write_double</a> [<a href="IO.html">IO</a>]</td>
 <td><div class="info">
-Write an IEEE double precision floating point value.
+Write an IEEE double precision floating point value (64 bits).
+</div>
+</td></tr>
+<tr><td><a href="IO.BigEndian.html#VALwrite_float32">write_float32</a> [<a href="IO.BigEndian.html">IO.BigEndian</a>]</td>
+<td></td></tr>
+<tr><td><a href="IO.html#VALwrite_float32">write_float32</a> [<a href="IO.html">IO</a>]</td>
+<td><div class="info">
+Write an IEEE single precision floating point value (32 bits).
 </div>
 </td></tr>
 <tr><td><a href="IO.BigEndian.html#VALwrite_i16">write_i16</a> [<a href="IO.BigEndian.html">IO.BigEndian</a>]</td>
@@ -2471,6 +2517,6 @@ Write a string and append an null character.
 Write an unsigned 16-bit word.
 </div>
 </td></tr>
-</table><br>
+</table>
 </body>
 </html>

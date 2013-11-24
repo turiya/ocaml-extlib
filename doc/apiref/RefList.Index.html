@@ -18,6 +18,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -32,11 +33,11 @@
 <link title="Unzip" rel="Chapter" href="Unzip.html"><title>RefList.Index</title>
 </head>
 <body>
-<div class="navbar">&nbsp;<a href="RefList.html">Up</a>
+<div class="navbar">&nbsp;<a class="up" href="RefList.html" title="RefList">Up</a>
 &nbsp;</div>
-<center><h1>Module <a href="type_RefList.Index.html">RefList.Index</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> Index: <code class="code">sig</code> <a href="RefList.Index.html">..</a> <code class="code">end</code></pre>Functions that operate on the <code class="code">i</code>th element of a list.
+<h1>Module <a href="type_RefList.Index.html">RefList.Index</a></h1>
+<pre><span class="keyword">module</span> Index: <code class="code">sig</code> <a href="RefList.Index.html">..</a> <code class="code">end</code></pre><div class="info">
+Functions that operate on the <code class="code">i</code>th element of a list.
 <p>
 
     While it is sometimes necessary to perform these
@@ -45,6 +46,7 @@
     their overuse: all functions work in O(n) time. You
 	might prefer to use <code class="code">Array</code> or <code class="code">DynArray</code> for constant
 	time indexed element access.<br>
+</div>
 <hr width="100%">
 <pre><span id="VALindex_of"><span class="keyword">val</span> index_of</span> : <code class="type">'a <a href="RefList.html#TYPEt">RefList.t</a> -> 'a -> int</code></pre><div class="info">
 Return the index (position : 0 starting) of an element in

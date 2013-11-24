@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -38,16 +39,17 @@
 <title>OptParse.StdOpt</title>
 </head>
 <body>
-<div class="navbar"><a href="OptParse.Opt.html">Previous</a>
-&nbsp;<a href="OptParse.html">Up</a>
-&nbsp;<a href="OptParse.Formatter.html">Next</a>
+<div class="navbar"><a class="pre" href="OptParse.Opt.html" title="OptParse.Opt">Previous</a>
+&nbsp;<a class="up" href="OptParse.html" title="OptParse">Up</a>
+&nbsp;<a class="post" href="OptParse.Formatter.html" title="OptParse.Formatter">Next</a>
 </div>
-<center><h1>Module <a href="type_OptParse.StdOpt.html">OptParse.StdOpt</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> StdOpt: <code class="code">sig</code> <a href="OptParse.StdOpt.html">..</a> <code class="code">end</code></pre>This module contains various standard options.<br>
+<h1>Module <a href="type_OptParse.StdOpt.html">OptParse.StdOpt</a></h1>
+<pre><span class="keyword">module</span> StdOpt: <code class="code">sig</code> <a href="OptParse.StdOpt.html">..</a> <code class="code">end</code></pre><div class="info">
+This module contains various standard options.<br>
+</div>
 <hr width="100%">
 <br>
-<span id="6_Flagoptions"><h6>Flag options</h6></span><br>
+<h6 id="6_Flagoptions">Flag options</h6><br>
 <pre><span id="VALstore_const"><span class="keyword">val</span> store_const</span> : <code class="type">?default:'a -> 'a -> 'a <a href="OptParse.Opt.html#TYPEt">OptParse.Opt.t</a></code></pre><div class="info">
 <code class="code">store_const ?default const</code> returns a flag option which
       stores the constant value <code class="code">const</code> when the option is
@@ -79,7 +81,7 @@ Exactly identical to <code class="code">count_option ~dest:dest ~increment:1 ()<
 Exactly identical to <code class="code">count_option ~dest:dest ~increment:(-1) ()</code>.<br>
 </div>
 <br>
-<span id="6_Valueoptions"><h6>Value options</h6></span><br>
+<h6 id="6_Valueoptions">Value options</h6><br>
 <pre><span id="VALint_option"><span class="keyword">val</span> int_option</span> : <code class="type">?default:int -> ?metavar:string -> unit -> int <a href="OptParse.Opt.html#TYPEt">OptParse.Opt.t</a></code></pre><div class="info">
 <code class="code">int_option ?default ?metavar ()</code> returns an option which takes
       a single integer argument. If <code class="code">~default</code> is given it is the
@@ -93,7 +95,7 @@ See <a href="OptParse.StdOpt.html#VALint_option"><code class="code">OptParse.Std
 See <a href="OptParse.StdOpt.html#VALint_option"><code class="code">OptParse.StdOpt.int_option</code></a>.<br>
 </div>
 <br>
-<span id="6_Callbackoptions"><h6>Callback options</h6></span><br>
+<h6 id="6_Callbackoptions">Callback options</h6><br>
 <pre><span id="VALint_callback"><span class="keyword">val</span> int_callback</span> : <code class="type">?metavar:string -> (int -> unit) -> unit <a href="OptParse.Opt.html#TYPEt">OptParse.Opt.t</a></code></pre><div class="info">
 <code class="code">int_callback ?metavar f</code> returns an option which takes a single
       integer argument and calls <code class="code">f</code> with that argument when encountered
@@ -106,7 +108,7 @@ See <a href="OptParse.StdOpt.html#VALint_callback"><code class="code">OptParse.S
 See <a href="OptParse.StdOpt.html#VALint_callback"><code class="code">OptParse.StdOpt.int_callback</code></a>.<br>
 </div>
 <br>
-<span id="6_Specialoptions"><h6>Special options</h6></span><br>
+<h6 id="6_Specialoptions">Special options</h6><br>
 <pre><span id="VALhelp_option"><span class="keyword">val</span> help_option</span> : <code class="type">unit -> 'a <a href="OptParse.Opt.html#TYPEt">OptParse.Opt.t</a></code></pre><div class="info">
 <code class="code">help_option ()</code> returns the standard help option which
       displays a usage message and exits the program when encountered

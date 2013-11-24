@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -34,19 +35,20 @@
 <link title="Unzip" rel="Chapter" href="Unzip.html"><title>Global</title>
 </head>
 <body>
-<div class="navbar"><a href="ExtString.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="IO.html">Next</a>
+<div class="navbar"><a class="pre" href="ExtString.html" title="ExtString">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="IO.html" title="IO">Next</a>
 </div>
-<center><h1>Module <a href="type_Global.html">Global</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> Global: <code class="code">sig</code> <a href="Global.html">..</a> <code class="code">end</code></pre>Mutable global variable.
+<h1>Module <a href="type_Global.html">Global</a></h1>
+<pre><span class="keyword">module</span> Global: <code class="code">sig</code> <a href="Global.html">..</a> <code class="code">end</code></pre><div class="info">
+Mutable global variable.
 <p>
 
 	Often in OCaml you want to have a global variable, which is mutable 
     and uninitialized when declared. You can use a <code class="code">'a option ref</code> but
 	this is not very convenient. The Global module provides functions
 	to easily create and manipulate such variables.<br>
+</div>
 <hr width="100%">
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 <div class="info">

@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -35,17 +36,18 @@
 <title>RefList</title>
 </head>
 <body>
-<div class="navbar"><a href="PMap.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="Std.html">Next</a>
+<div class="navbar"><a class="pre" href="PMap.html" title="PMap">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Std.html" title="Std">Next</a>
 </div>
-<center><h1>Module <a href="type_RefList.html">RefList</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> RefList: <code class="code">sig</code> <a href="RefList.html">..</a> <code class="code">end</code></pre>Reference on lists.
+<h1>Module <a href="type_RefList.html">RefList</a></h1>
+<pre><span class="keyword">module</span> RefList: <code class="code">sig</code> <a href="RefList.html">..</a> <code class="code">end</code></pre><div class="info">
+Reference on lists.
 <p>
 
   RefList is a extended set of functions that manipulate list
   references.<br>
+</div>
 <hr width="100%">
 <pre><span id="EXCEPTIONEmpty_list"><span class="keyword">exception</span> Empty_list</span></pre>
 <pre><span id="EXCEPTIONInvalid_index"><span class="keyword">exception</span> Invalid_index</span> <span class="keyword">of</span> <code class="type">int</code></pre>
@@ -123,7 +125,7 @@ Returns a ref list containing the same elements
 Reverses the ref list - O(n)<br>
 </div>
 <br>
-<span id="6_FunctionalOperations"><h6>Functional Operations</h6></span><br>
+<h6 id="6_FunctionalOperations">Functional Operations</h6><br>
 <pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> unit) -> 'a <a href="RefList.html#TYPEt">t</a> -> unit</code></pre><div class="info">
 Apply the given function to all elements of the
     ref list, in respect with the order of the list<br>

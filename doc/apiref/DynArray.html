@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -40,18 +41,19 @@
 <title>DynArray</title>
 </head>
 <body>
-<div class="navbar"><a href="Dllist.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="Enum.html">Next</a>
+<div class="navbar"><a class="pre" href="Dllist.html" title="Dllist">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Enum.html" title="Enum">Next</a>
 </div>
-<center><h1>Module <a href="type_DynArray.html">DynArray</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> DynArray: <code class="code">sig</code> <a href="DynArray.html">..</a> <code class="code">end</code></pre>Dynamic arrays.
+<h1>Module <a href="type_DynArray.html">DynArray</a></h1>
+<pre><span class="keyword">module</span> DynArray: <code class="code">sig</code> <a href="DynArray.html">..</a> <code class="code">end</code></pre><div class="info">
+Dynamic arrays.
 <p>
 
    A dynamic array is equivalent to a OCaml array that will resize itself
    when elements are added or removed, except that floats are boxed and
    that no initialization element is required.<br>
+</div>
 <hr width="100%">
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 
@@ -63,7 +65,7 @@ When an operation on an array fails, <code class="code">Invalid_arg</code> is ra
 	contains the parameter name that made the operation fail.<br>
 </div>
 <br>
-<span id="6_Arraycreation"><h6>Array creation</h6></span><br>
+<h6 id="6_Arraycreation">Array creation</h6><br>
 <pre><span id="VALcreate"><span class="keyword">val</span> create</span> : <code class="type">unit -> 'a <a href="DynArray.html#TYPEt">t</a></code></pre><div class="info">
 <code class="code">create()</code> returns a new empty dynamic array.<br>
 </div>
@@ -76,7 +78,7 @@ When an operation on an array fails, <code class="code">Invalid_arg</code> is ra
 	returned by <code class="code">f 0 , f 1, ... f (n-1)</code>.<br>
 </div>
 <br>
-<span id="6_Arraymanipulationfunctions"><h6>Array manipulation functions</h6></span><br>
+<h6 id="6_Arraymanipulationfunctions">Array manipulation functions</h6><br>
 <pre><span id="VALempty"><span class="keyword">val</span> empty</span> : <code class="type">'a <a href="DynArray.html#TYPEt">t</a> -> bool</code></pre><div class="info">
 Return true if the number of elements in the array is 0.<br>
 </div>
@@ -132,7 +134,7 @@ remove all elements from the array and resize it to 0.<br>
 <code class="code">compact darr</code> ensures that the space allocated by the array is minimal.<br>
 </div>
 <br>
-<span id="6_Arraycopyandconversion"><h6>Array copy and conversion</h6></span><br>
+<h6 id="6_Arraycopyandconversion">Array copy and conversion</h6><br>
 <pre><span id="VALto_list"><span class="keyword">val</span> to_list</span> : <code class="type">'a <a href="DynArray.html#TYPEt">t</a> -> 'a list</code></pre><div class="info">
 <code class="code">to_list darr</code> returns the elements of <code class="code">darr</code> in order as a list.<br>
 </div>
@@ -163,7 +165,7 @@ remove all elements from the array and resize it to 0.<br>
 	elements from <code class="code">darr</code> starting with the element at index <code class="code">idx</code>.<br>
 </div>
 <br>
-<span id="6_Arrayfunctionalsupport"><h6>Array functional support</h6></span><br>
+<h6 id="6_Arrayfunctionalsupport">Array functional support</h6><br>
 <pre><span id="VALiter"><span class="keyword">val</span> iter</span> : <code class="type">('a -> unit) -> 'a <a href="DynArray.html#TYPEt">t</a> -> unit</code></pre><div class="info">
 <code class="code">iter f darr</code> calls the function <code class="code">f</code> on every element of <code class="code">darr</code>.  It
 	is equivalent to <code class="code">for i = 0 to length darr - 1 do f (get darr i) done;</code><br>
@@ -197,7 +199,7 @@ remove all elements from the array and resize it to 0.<br>
 	as <code class="code">f x</code> returns <code class="code">true</code> or raise <code class="code">Not_found</code> if not found.<br>
 </div>
 <pre><span id="VALfilter"><span class="keyword">val</span> filter</span> : <code class="type">('a -> bool) -> 'a <a href="DynArray.html#TYPEt">t</a> -> unit</code></pre><br>
-<span id="6_Arrayresizers"><h6>Array resizers</h6></span><br>
+<h6 id="6_Arrayresizers">Array resizers</h6><br>
 <pre><span id="TYPEresizer_t"><span class="keyword">type</span> <code class="type"></code>resizer_t</span> = <code class="type">currslots:int -> oldlength:int -> newlength:int -> int</code> </pre>
 <div class="info">
 The type of a resizer function.
@@ -306,5 +308,5 @@ The stepwise resizer- another example of a resizer function, this
 	than that, it acts like <code class="code">exponential_resizer</code>.<br>
 </div>
 <br>
-<span id="6_Unsafeoperations"><h6>Unsafe operations</h6></span> *<br>
+<h6 id="6_Unsafeoperations">Unsafe operations</h6> *<br>
 <pre><span id="VALunsafe_get"><span class="keyword">val</span> unsafe_get</span> : <code class="type">'a <a href="DynArray.html#TYPEt">t</a> -> int -> 'a</code></pre><pre><span id="VALunsafe_set"><span class="keyword">val</span> unsafe_set</span> : <code class="type">'a <a href="DynArray.html#TYPEt">t</a> -> int -> 'a -> unit</code></pre></body></html>

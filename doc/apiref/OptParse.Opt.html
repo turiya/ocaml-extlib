@@ -19,6 +19,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -37,16 +38,17 @@
 <title>OptParse.Opt</title>
 </head>
 <body>
-<div class="navbar">&nbsp;<a href="OptParse.html">Up</a>
-&nbsp;<a href="OptParse.StdOpt.html">Next</a>
+<div class="navbar">&nbsp;<a class="up" href="OptParse.html" title="OptParse">Up</a>
+&nbsp;<a class="post" href="OptParse.StdOpt.html" title="OptParse.StdOpt">Next</a>
 </div>
-<center><h1>Module <a href="type_OptParse.Opt.html">OptParse.Opt</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> Opt: <code class="code">sig</code> <a href="OptParse.Opt.html">..</a> <code class="code">end</code></pre>This module contains the basic functions and types for defining
+<h1>Module <a href="type_OptParse.Opt.html">OptParse.Opt</a></h1>
+<pre><span class="keyword">module</span> Opt: <code class="code">sig</code> <a href="OptParse.Opt.html">..</a> <code class="code">end</code></pre><div class="info">
+This module contains the basic functions and types for defining
   new option types and accessing the values of options.<br>
+</div>
 <hr width="100%">
 <br>
-<span id="6_Exceptions"><h6>Exceptions</h6></span><br>
+<h6 id="6_Exceptions">Exceptions</h6><br>
 <pre><span id="EXCEPTIONNo_value"><span class="keyword">exception</span> No_value</span></pre>
 <div class="info">
 <code class="code">No_value</code> gets raised by <a href="OptParse.Opt.html#VALget"><code class="code">OptParse.Opt.get</code></a> when an option
@@ -71,41 +73,41 @@ When an option wants to display a usage message, this exception
       attempt to catch it.<br>
 </div>
 <br>
-<span id="6_Types"><h6>Types</h6></span><br>
-<br><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = {</code><table class="typetable">
+<h6 id="6_Types">Types</h6><br>
+<pre><code><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> = {</code></pre><table class="typetable">
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code>option_set&nbsp;: <code class="type">string -> string list -> unit</code>;</code></td>
+<code><span id="TYPEELTt.option_set">option_set</span>&nbsp;:<code class="type">string -> string list -> unit</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code>option_set_value&nbsp;: <code class="type">'a -> unit</code>;</code></td>
+<code><span id="TYPEELTt.option_set_value">option_set_value</span>&nbsp;:<code class="type">'a -> unit</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code>option_get&nbsp;: <code class="type">unit -> 'a option</code>;</code></td>
+<code><span id="TYPEELTt.option_get">option_get</span>&nbsp;:<code class="type">unit -> 'a option</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code>option_metavars&nbsp;: <code class="type">string list</code>;</code></td>
+<code><span id="TYPEELTt.option_metavars">option_metavars</span>&nbsp;:<code class="type">string list</code>;</code></td>
 
 </tr>
 <tr>
 <td align="left" valign="top" >
 <code>&nbsp;&nbsp;</code></td>
 <td align="left" valign="top" >
-<code>option_defhelp&nbsp;: <code class="type">string option</code>;</code></td>
+<code><span id="TYPEELTt.option_defhelp">option_defhelp</span>&nbsp;:<code class="type">string option</code>;</code></td>
 
 </tr></table>
 }
@@ -146,7 +148,7 @@ Option type.
 </div>
 
 <br>
-<span id="6_Optionvalueretrieval"><h6>Option value retrieval</h6></span><br>
+<h6 id="6_Optionvalueretrieval">Option value retrieval</h6><br>
 <pre><span id="VALget"><span class="keyword">val</span> get</span> : <code class="type">'a <a href="OptParse.Opt.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
 Get the value of an option.<br>
 <b>Raises</b> <code>No_value</code> if no default values has been given
@@ -170,7 +172,7 @@ Find out if the option has a value (either by default or
 <b>Returns</b> <code class="code">True</code> iff the option has a value.<br>
 </div>
 <br>
-<span id="6_Optioncreation"><h6>Option creation</h6></span><br>
+<h6 id="6_Optioncreation">Option creation</h6><br>
 <pre><span id="VALvalue_option"><span class="keyword">val</span> value_option</span> : <code class="type">string -><br>       'a option -> (string -> 'a) -> (exn -> string -> string) -> 'a <a href="OptParse.Opt.html#TYPEt">t</a></code></pre><div class="info">
 Make an option which takes a single argument.
 <p>

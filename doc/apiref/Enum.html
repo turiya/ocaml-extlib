@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -39,13 +40,13 @@
 <title>Enum</title>
 </head>
 <body>
-<div class="navbar"><a href="DynArray.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="ExtArray.html">Next</a>
+<div class="navbar"><a class="pre" href="DynArray.html" title="DynArray">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="ExtArray.html" title="ExtArray">Next</a>
 </div>
-<center><h1>Module <a href="type_Enum.html">Enum</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> Enum: <code class="code">sig</code> <a href="Enum.html">..</a> <code class="code">end</code></pre>Enumeration over abstract collection of elements.
+<h1>Module <a href="type_Enum.html">Enum</a></h1>
+<pre><span class="keyword">module</span> Enum: <code class="code">sig</code> <a href="Enum.html">..</a> <code class="code">end</code></pre><div class="info">
+Enumeration over abstract collection of elements.
 <p>
 
  Enumerations are entirely functional and most of the operations do not
@@ -53,11 +54,12 @@
  to manipulate data is therefore efficient and simple. All data structures in
  ExtLib such as lists, arrays, etc. have support to convert from and to
  enumerations.<br>
+</div>
 <hr width="100%">
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">'a</code> t</span> </pre>
 
 <br>
-<span id="6_Finalfunctions"><h6>Final functions</h6></span>
+<h6 id="6_Finalfunctions">Final functions</h6>
 <p>
 
  These functions consume the enumeration until
@@ -84,7 +86,7 @@ Indexed functions : these functions are similar to previous ones
  except that they call the function with one additional argument which
  is an index starting at 0 and incremented after each call to the function.<br>
 <pre><span id="VALiteri"><span class="keyword">val</span> iteri</span> : <code class="type">(int -> 'a -> unit) -> 'a <a href="Enum.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALiter2i"><span class="keyword">val</span> iter2i</span> : <code class="type">(int -> 'a -> 'b -> unit) -> 'a <a href="Enum.html#TYPEt">t</a> -> 'b <a href="Enum.html#TYPEt">t</a> -> unit</code></pre><pre><span id="VALfoldi"><span class="keyword">val</span> foldi</span> : <code class="type">(int -> 'a -> 'b -> 'b) -> 'b -> 'a <a href="Enum.html#TYPEt">t</a> -> 'b</code></pre><pre><span id="VALfold2i"><span class="keyword">val</span> fold2i</span> : <code class="type">(int -> 'a -> 'b -> 'c -> 'c) -> 'c -> 'a <a href="Enum.html#TYPEt">t</a> -> 'b <a href="Enum.html#TYPEt">t</a> -> 'c</code></pre><br>
-<span id="6_Usefulfunctions"><h6>Useful functions</h6></span><br>
+<h6 id="6_Usefulfunctions">Useful functions</h6><br>
 <pre><span id="VALfind"><span class="keyword">val</span> find</span> : <code class="type">('a -> bool) -> 'a <a href="Enum.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
 <code class="code">find f e</code> returns the first element <code class="code">x</code> of <code class="code">e</code> such that <code class="code">f x</code> returns
  <code class="code">true</code>, consuming the enumeration up to and including the
@@ -106,6 +108,10 @@ Indexed functions : these functions are similar to previous ones
 <code class="code">get e</code> returns <code class="code">None</code> if <code class="code">e</code> is empty or <code class="code">Some x</code> where <code class="code">x</code> is
   the next element of <code class="code">e</code>, in which case the element is removed from the enumeration.<br>
 </div>
+<pre><span id="VALnext"><span class="keyword">val</span> next</span> : <code class="type">'a <a href="Enum.html#TYPEt">t</a> -> 'a</code></pre><div class="info">
+<code class="code">next e</code> returns the next element of <code class="code">e</code> (and removes it from enumeration).<br>
+<b>Raises</b> <code>No_more_elements</code> if enumeration is empty<br>
+</div>
 <pre><span id="VALpush"><span class="keyword">val</span> push</span> : <code class="type">'a <a href="Enum.html#TYPEt">t</a> -> 'a -> unit</code></pre><div class="info">
 <code class="code">push e x</code> will add <code class="code">x</code> at the beginning of <code class="code">e</code>.<br>
 </div>
@@ -126,7 +132,7 @@ Indexed functions : these functions are similar to previous ones
   that data structure.<br>
 </div>
 <br>
-<span id="6_Lazyconstructors"><h6>Lazy constructors</h6></span>
+<h6 id="6_Lazyconstructors">Lazy constructors</h6>
 <p>
 
  These functions are lazy which means that they will create a new modified
@@ -161,7 +167,7 @@ Indexed functions : these functions are similar to previous ones
  of <code class="code">e</code>.<br>
 </div>
 <br>
-<span id="6_Constructors"><h6>Constructors</h6></span> 
+<h6 id="6_Constructors">Constructors</h6> 
 <p>
 
  In this section the word <i>shall</i> denotes a semantic
@@ -209,7 +215,7 @@ This function creates a fully defined enumeration.
   <code class="code">f 0, f 1, ..., f (n-1)</code><br>
 </div>
 <br>
-<span id="6_Counting"><h6>Counting</h6></span><br>
+<h6 id="6_Counting">Counting</h6><br>
 <pre><span id="VALcount"><span class="keyword">val</span> count</span> : <code class="type">'a <a href="Enum.html#TYPEt">t</a> -> int</code></pre><div class="info">
 <code class="code">count e</code> returns the number of remaining elements in <code class="code">e</code> without
   consuming the enumeration.

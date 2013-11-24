@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -34,17 +35,18 @@
 <link title="Unzip" rel="Chapter" href="Unzip.html"><title>PMap</title>
 </head>
 <body>
-<div class="navbar"><a href="Option.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="RefList.html">Next</a>
+<div class="navbar"><a class="pre" href="Option.html" title="Option">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="RefList.html" title="RefList">Next</a>
 </div>
-<center><h1>Module <a href="type_PMap.html">PMap</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> PMap: <code class="code">sig</code> <a href="PMap.html">..</a> <code class="code">end</code></pre>Polymorphic Map.
+<h1>Module <a href="type_PMap.html">PMap</a></h1>
+<pre><span class="keyword">module</span> PMap: <code class="code">sig</code> <a href="PMap.html">..</a> <code class="code">end</code></pre><div class="info">
+Polymorphic Map.
 <p>
 
 	This is a polymorphic map, similar to standard library <code class="code">Map</code> module
 	but in a defunctorized style.<br>
+</div>
 <hr width="100%">
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type">('a, 'b)</code> t</span> </pre>
 
@@ -84,7 +86,7 @@ same as <code class="code">mem</code>.<br>
     <code class="code">f</code> is unspecified. Only current bindings are presented to <code class="code">f</code>:
     bindings hidden by more recent bindings are not passed to <code class="code">f</code>.<br>
 </div>
-<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('a -> 'b) -> ('c, 'a) <a href="PMap.html#TYPEt">t</a> -> ('c, 'b) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
+<pre><span id="VALmap"><span class="keyword">val</span> map</span> : <code class="type">('b -> 'c) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> ('a, 'c) <a href="PMap.html#TYPEt">t</a></code></pre><div class="info">
 <code class="code">map f m</code> returns a map with same domain as <code class="code">m</code>, where the
     associated value <code class="code">a</code> of all bindings of <code class="code">m</code> has been
     replaced by the result of the application of <code class="code">f</code> to <code class="code">a</code>.
@@ -95,7 +97,7 @@ same as <code class="code">mem</code>.<br>
 Same as <code class="code">map</code>, but the function receives as arguments both the
     key and the associated value for each binding of the map.<br>
 </div>
-<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('a -> 'b -> 'b) -> ('c, 'a) <a href="PMap.html#TYPEt">t</a> -> 'b -> 'b</code></pre><div class="info">
+<pre><span id="VALfold"><span class="keyword">val</span> fold</span> : <code class="type">('b -> 'c -> 'c) -> ('a, 'b) <a href="PMap.html#TYPEt">t</a> -> 'c -> 'c</code></pre><div class="info">
 <code class="code">fold f m a</code> computes <code class="code">(f kN dN ... (f k1 d1 a)...)</code>,
     where <code class="code">k1 ... kN</code> are the keys of all bindings in <code class="code">m</code>,
     and <code class="code">d1 ... dN</code> are the associated data.

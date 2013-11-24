@@ -20,6 +20,7 @@
 <link title="Enum" rel="Chapter" href="Enum.html">
 <link title="ExtArray" rel="Chapter" href="ExtArray.html">
 <link title="ExtHashtbl" rel="Chapter" href="ExtHashtbl.html">
+<link title="ExtLib" rel="Chapter" href="ExtLib.html">
 <link title="ExtList" rel="Chapter" href="ExtList.html">
 <link title="ExtString" rel="Chapter" href="ExtString.html">
 <link title="Global" rel="Chapter" href="Global.html">
@@ -34,16 +35,17 @@
 <link title="Unzip" rel="Chapter" href="Unzip.html"><title>UTF8</title>
 </head>
 <body>
-<div class="navbar"><a href="UChar.html">Previous</a>
-&nbsp;<a href="index.html">Up</a>
-&nbsp;<a href="Unzip.html">Next</a>
+<div class="navbar"><a class="pre" href="UChar.html" title="UChar">Previous</a>
+&nbsp;<a class="up" href="index.html" title="Index">Up</a>
+&nbsp;<a class="post" href="Unzip.html" title="Unzip">Next</a>
 </div>
-<center><h1>Module <a href="type_UTF8.html">UTF8</a></h1></center>
-<br>
-<pre><span class="keyword">module</span> UTF8: <code class="code">sig</code> <a href="UTF8.html">..</a> <code class="code">end</code></pre>UTF-8 encoded Unicode strings. 
+<h1>Module <a href="type_UTF8.html">UTF8</a></h1>
+<pre><span class="keyword">module</span> UTF8: <code class="code">sig</code> <a href="UTF8.html">..</a> <code class="code">end</code></pre><div class="info">
+UTF-8 encoded Unicode strings. 
 <p>
 
    The Module for UTF-8 encoded Unicode strings.<br>
+</div>
 <hr width="100%">
 <pre><span id="TYPEt"><span class="keyword">type</span> <code class="type"></code>t</span> = <code class="type">string</code> </pre>
 <div class="info">
@@ -85,6 +87,10 @@ The position of the head of the last Unicode character.<br>
 <pre><span id="VALlook"><span class="keyword">val</span> look</span> : <code class="type"><a href="UTF8.html#TYPEt">t</a> -> <a href="UTF8.html#TYPEindex">index</a> -> <a href="UChar.html#TYPEuchar">UChar.uchar</a></code></pre><div class="info">
 <code class="code">look s i</code>
    returns the Unicode character of the location <code class="code">i</code> in the string <code class="code">s</code>.<br>
+</div>
+<pre><span id="VALsubstring"><span class="keyword">val</span> substring</span> : <code class="type"><a href="UTF8.html#TYPEt">t</a> -> int -> int -> <a href="UTF8.html#TYPEt">t</a></code></pre><div class="info">
+<code class="code">substring s i len</code> returns the substring made of the Unicode locations <code class="code">i</code> to <code class="code">i + len - 1</code> inclusive.
+   The string is always copied<br>
 </div>
 <pre><span id="VALout_of_range"><span class="keyword">val</span> out_of_range</span> : <code class="type"><a href="UTF8.html#TYPEt">t</a> -> <a href="UTF8.html#TYPEindex">index</a> -> bool</code></pre><div class="info">
 <code class="code">out_of_range s i</code>
