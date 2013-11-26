@@ -3,6 +3,10 @@
 
 = !ExtLib release notes =
 
+== extlib-1.6.1 (2013-11-26 - trunk @ r436)
+ * Drop `extlib_min` package
+ * Choose at build-time whether to build full or reduced library
+
 == extlib-1.6.0 (2013-11-25 - trunk @ r429) ==
  * Fix OCaml 4 Hashtbl compatibility
  * Install additionally `extlib_min` with reduced set of modules (to mitigate linking conflicts)
